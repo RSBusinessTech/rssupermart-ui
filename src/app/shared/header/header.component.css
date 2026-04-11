@@ -1,0 +1,106 @@
+/* Header Background */
+.site-header {
+  background-color: #ffffff; /* white theme */
+  padding: 0.8rem 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Container */
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  flex-wrap: wrap;
+}
+
+/* Menu Toggle (Mobile) */
+.site-header .container .menu-toggle {
+  display: none;
+  font-size: 1.6rem;
+  background: none;
+  border: none;
+  color: #007bff; /* blue from logo */
+  cursor: pointer;
+}
+
+/* Nav Links */
+.site-header .container .nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Nav Items (Box Style) */
+.site-header .container .nav-links a {
+  background-color: rgb(194, 20, 20);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.45rem 0.9rem;
+  border-radius: 6px;
+  display: inline-block;
+  transition: all 0.3s ease;
+  position: relative;
+  color: white;
+}
+
+/* Hover Effect (Green Theme) */
+.site-header .container .nav-links a:hover {
+  background-color: #28a745; /* green */
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Active Link (Blue Theme) */
+.site-header .container .nav-links a.active {
+  background-color: #007bff; /* blue */
+  color: #fff;
+}
+
+/* Optional Red Accent (on click feel) */
+.site-header .container .nav-links a:active {
+  background-color: #dc3545; /* red */
+}
+
+/* Desktop only */
+@media (min-width: 1024px) {
+  .site-header .container .logo img {
+    height: 105px;
+    width: 155px;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+
+  .site-header .container .menu-toggle {
+    display: block;
+  }
+
+  .site-header .container .logo img {
+    height: 60px;
+  }
+
+  .site-header .container .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 1rem;
+    background: #ffffff;
+  }
+
+  .site-header .container .nav-links.mobile-menu-open {
+    display: flex;
+  }
+
+  .site-header .container .nav-links a {
+    width: 100%;
+    text-align: left;
+    padding: 0.7rem 1rem;
+  }
+}

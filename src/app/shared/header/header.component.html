@@ -1,0 +1,22 @@
+<header class="site-header">
+    <div class="container">
+      <a routerLink="/" class="logo">
+        <img src="/assets/icons/RSSuperMartLogo.png" alt="Vyen Property Advisor Logo" />
+      </a>
+  
+      <nav class="nav-links" [class.mobile-menu-open]="menuOpen">
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
+        <a routerLink="/grocery" routerLinkActive="active">Grocery</a>
+        <a routerLink="/snacks" routerLinkActive="active">Snacks</a>
+        <a routerLink="/drinks" routerLinkActive="active">Drinks</a>
+        <a routerLink="/stationery" routerLinkActive="active">Stationery</a>
+        <a routerLink="/cafe" routerLinkActive="active">Cafe Services</a>
+        <a routerLink="/contact" routerLinkActive="active">Contact</a>
+      </nav>
+  
+      <button class="menu-toggle" (click)="menuOpen = !menuOpen">
+        ☰
+      </button>
+    </div>
+  </header>
+  

@@ -1,0 +1,230 @@
+/* Main Footer */
+.footer-container {
+  background-color: #ffffff; /* white theme */
+  padding: 40px 20px 20px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #333;
+  border-top: 4px solid #28a745; /* green top border */
+}
+
+/* Layout */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+}
+
+/* Logo + Social */
+.footer-logo-connect {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 10px;
+  margin-right: 40px;
+  min-width: 220px;
+  margin-top: 18px;
+}
+
+.footer-logo img {
+  width: 260px;
+  margin-bottom: 15px;
+}
+
+/* Connect text */
+.connect-us {
+  color: rgb(8, 8, 145);
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 12px;
+}
+
+.social-icons a img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a img:hover {
+  transform: scale(1.15);
+}
+
+/* Sections */
+.footer-section {
+  flex: 1 1 200px;
+  margin-bottom: 40px;
+  min-width: 180px;
+}
+
+/* Section Titles */
+.footer-section h3 {
+  color: rgb(8, 8, 145);
+  margin-bottom: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 6px;
+}
+
+/* Underline (Green Accent) */
+.footer-section h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 40px;
+  background: #28a745; /* green */
+}
+
+/* Lists */
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+/* Links */
+.footer-section ul li a {
+  color: #333;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Hover (Green + slight move) */
+.footer-section ul li a:hover {
+  color: #28a745;
+  padding-left: 4px;
+}
+
+/* Address Links */
+.footer-section ul.address-list li a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  font-size: 13px;
+  color: #666;
+  margin-top: 10px;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+/* Desktop Only */
+.desktop-only {
+  display: flex;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .footer-container {
+    padding: 30px 10px 20px 10px;
+  }
+
+  .footer-container > .footer-bottom {
+    display: none;
+  }
+
+  .footer-top {
+    display: block;
+    text-align: center;
+  }
+
+  .footer-section {
+    width: 100%;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .footer-section h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .footer-section ul li {
+    font-size: 15px;
+  }
+
+  /* Mobile Social */
+  .mobile-connect-social {
+    display: block;
+    margin-top: 40px;
+  }
+
+  .connect-us {
+    color: rgb(8, 8, 145);
+    margin-bottom: 10px;
+  }
+
+  .social-icons {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .social-icons a img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .footer-logo-connect {
+    display: none;
+  }
+
+  .footer-logo-mobile {
+    width: 160px;
+    margin-top: 20px;
+  }
+}
+
+/* Hide mobile section on desktop */
+@media (min-width: 769px) {
+  .mobile-connect-social {
+    display: none !important;
+  }
+
+  .footer-section.services-section {
+    order: 2;
+  }
+
+  .footer-section.address-section {
+    order: 3;
+  }
+}
+
+/* Developer Credit */
+.developer-credit {
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+  margin-top: 20px;
+}
+
+.developer-credit a {
+  color: rgb(8, 8, 145);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.developer-credit a:hover {
+  color: #dc3545; /* red */
+}
+
+.developer-credit .credit-link {
+  text-decoration: underline;
+}
