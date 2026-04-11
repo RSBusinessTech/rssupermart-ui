@@ -1,0 +1,19 @@
+[build]
+command = "npm run build"
+publish = "dist/rssupermart-ui"
+
+[build.environment]
+  NODE_VERSION = "16"
+
+# Redirect HTTP to HTTPS permanently (SEO-friendly)
+[[redirects]]
+  from = "http://*"
+  to = "https://:splat"
+  status = 301
+  force = true
+
+# Handle Angular SPA routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
