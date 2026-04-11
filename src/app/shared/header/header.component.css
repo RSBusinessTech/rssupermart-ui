@@ -39,7 +39,7 @@
   font-weight: 500;
   padding: 0.5rem 1rem;
   border-radius: 5px;
-    margin-left: 0.5rem;        /* spacing between boxes */
+  margin-left: 0.5rem;        /* spacing between boxes */
   display: inline-block;
   transition: all 0.3s ease;
   color: white;
@@ -66,7 +66,7 @@
 }
 
 /* Desktop only */
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .site-header .container .logo img {
     height: 105px;
     width: 155px;
@@ -75,7 +75,6 @@
 
 /* Mobile Styles */
 @media (max-width: 768px) {
-
   .site-header .container .menu-toggle {
     display: block;
   }

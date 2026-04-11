@@ -33,7 +33,7 @@
 }
 
 .hero-right img {
-  width: 350px;
+  width: 230px;
 }
 
 .green-text {
@@ -193,30 +193,8 @@
   }
 }
 
-/* TABLET */
-@media (max-width: 992px) {
-  .hero-banner {
-    flex-direction: column;
-    text-align: center;
-    padding: 40px 20px;
-  }
-
-  .hero-left h1 {
-    font-size: 32px;
-  }
-
-  .hero-left p {
-    font-size: 16px;
-    margin: 10px auto;
-  }
-
-  .hero-right img {
-    max-width: 300px;
-  }
-}
-
 /* MOBILE */
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .hero-banner {
     padding: 30px 15px;
   }
