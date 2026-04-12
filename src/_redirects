@@ -1,0 +1,9 @@
+# Redirect .in domain to .com domain
+https://rssupermart.in/*     https://rssupermart.com/:splat     301!
+https://www.rssupermart.in/* https://rssupermart.com/:splat     301!
+
+# Redirect all HTTP traffic to HTTPS
+http://*  https://%{host}%{uri} 301!
+
+# tells netlify, If user opens any URL directly, always load index.html.
+/*    /index.html   200
