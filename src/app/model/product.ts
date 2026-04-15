@@ -1,3 +1,8 @@
+export interface ProductCategory {
+  category: string;
+  products: ProductItem[];
+}
+
 export interface ProductItem {
   id: number;
   name: string;
@@ -5,9 +10,4 @@ export interface ProductItem {
   image: string;
   price: string;
   category: string;
-}
-
-export interface ProductCategory {
-  category: string;
-  products: ProductItem[];
 }

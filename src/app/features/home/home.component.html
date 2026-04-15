@@ -73,12 +73,14 @@
 
         <!-- SAME DESIGN AS YOUR WORKING VERSION -->
         <div class="card-footer">
-          <p class="price">RM {{ product.price }}</p>
-          <button>Add to Cart</button>
-        </div>
-
+          <p class="price">Rs. {{ product.price }}</p>
+           <div class="qty-box">
+            <button (click)="decreaseQty(product)">−</button>
+            <span>{{ getQty(product) }}</span>
+            <button (click)="increaseQty(product)">+</button>
+           </div>        
+         </div>
       </div>
-
     </div>
 
     <div class="see-more-wrapper">
@@ -86,7 +88,10 @@
         See more →
       </a>
     </div>
-
   </div>
+
+<button (click)="sendCartToWhatsApp()" class="checkout-btn">
+  Buy now using <img src="assets/icons/whatsapp.svg" alt="WhatsApp" />
+</button>
 
 </section>
