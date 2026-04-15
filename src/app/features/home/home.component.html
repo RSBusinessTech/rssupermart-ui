@@ -1,15 +1,20 @@
 <!-- HERO BANNER -->
 <section class="hero-banner">
-<div class="hero-left">
-  <h1>
-    <span class="green-text">Super Price</span>,
-    <span class="blue-text">Super Quality</span>
-  </h1>
-  <p>Everything you need at Home – Grocery, Snacks & Drinks, Stationery, Pritning & Laminations etc.</p><br>
-  <a routerLink="/grocery" class="shop-btn">Start Shopping</a>
-</div>
+  <div class="hero-left">
+    <h1>
+      <span class="green-text">Super Price</span>,
+      <span class="blue-text">Super Quality</span>
+    </h1>
+    <p>
+      Everything you need at Home – Grocery, Snacks & Drinks, Stationery,
+      Printing & Laminations etc.
+    </p>
+    <br />
+    <a routerLink="/grocery" class="shop-btn">Start Shopping</a>
+  </div>
+
   <div class="hero-right">
-    <img src="assets/images/grocery-banner.jpg" alt="banner">
+    <img src="assets/images/grocery-banner.jpg" alt="banner" />
   </div>
 </section>
 
@@ -19,244 +24,69 @@
     <div class="icon">🛒</div>
     <p>Grocery</p>
   </div>
+
   <div class="category-item">
     <div class="icon">✏️</div>
     <p>Stationery</p>
   </div>
-   <div class="category-item">
+
+  <div class="category-item">
     <div class="icon">🥪</div>
     <p>Snacks</p>
   </div>
+
   <div class="category-item">
     <div class="icon">🥤</div>
     <p>Drinks</p>
   </div>
+
   <div class="category-item">
     <div class="icon">🖨️</div>
     <p>Cafe Services</p>
   </div>
 </section>
 
-<!-- GROCERY -->
-<section class="products">
-  <h2>Grocery</h2>
-  <div class="product-grid">
-    <div class="product-card">
-      <img src="assets/images/cooking-oil.png">
-      <h3>Cooking Oil</h3>
-      <p class="price">Rs 5.50</p>
-      <button>Add to Cart</button>
-    </div>
-
-    <div class="product-card">
-      <img src="assets/images/detergent.png">
-      <h3>Detergent</h3>
-      <p class="price">Rs 4.20</p>
-      <button>Add to Cart</button>
-    </div>
-
-    <div class="product-card">
-      <img src="assets/images/tea.png">
-      <h3>Tea packet</h3>
-      <p class="price">Rs 6.80</p>
-      <button>Add to Cart</button>
-    </div>
-
-    <div class="product-card">
-      <img src="assets/images/bread.png">
-      <h3>Bread</h3>
-      <p class="price">Rs 3.50</p>
-      <button>Add to Cart</button>
-    </div>
-
-    <div class="product-card">
-      <img src="assets/images/eggs.png">
-      <h3>Eggs (12 pcs)</h3>
-      <p class="price">Rs 8.00</p>
-      <button>Add to Cart</button>
-    </div>
-  </div>
-  <div class="see-more-wrapper">
-    <a routerLink="/grocery" class="see-more">See more →</a>
-  </div>
+<!-- SEARCH BAR -->
+<section class="search-section">
+  <input
+    type="text"
+    [(ngModel)]="searchTerm"
+    placeholder="Search products..."
+    class="search-bar"
+  />
 </section>
 
-<!-- SNACKS -->
-<section class="products">
-  <h2>Snacks</h2>
-  <div class="product-grid">
-    <div class="product-card">
-      <img src="assets/images/sandwich.png">
-      <h3>Sandwich</h3>
-      <p class="price">Rs 4.00</p>
-      <button>Add to Cart</button>
+<!-- PRODUCT SECTIONS -->
+<section class="products-section">
+
+  <div *ngFor="let category of getFilteredCategories()" class="products">
+
+    <h2>{{ category.category }}</h2>
+
+    <div class="product-grid">
+
+      <div class="product-card" *ngFor="let product of category.products | slice:0:4">
+
+        <img [src]="product.image" [alt]="product.name" />
+
+        <h3>{{ product.name }}</h3>
+
+        <!-- SAME DESIGN AS YOUR WORKING VERSION -->
+        <div class="card-footer">
+          <p class="price">RM {{ product.price }}</p>
+          <button>Add to Cart</button>
+        </div>
+
+      </div>
+
     </div>
 
-    <div class="product-card">
-      <img src="assets/images/chips.png">
-      <h3>Chips</h3>
-      <p class="price">Rs 3.00</p>
-      <button>Add to Cart</button>
+    <div class="see-more-wrapper">
+      <a [routerLink]="category.routerLink" class="see-more">
+        See more →
+      </a>
     </div>
 
-    <div class="product-card">
-      <img src="assets/images/chocolate.png">
-      <h3>Chocolate Bar</h3>
-      <p class="price">Rs 2.50</p>
-      <button>Add to Cart</button>
-    </div>
-
-    <div class="product-card">
-      <img src="assets/images/cookies.png">
-      <h3>Cookies</h3>
-      <p class="price">Rs 4.80</p>
-      <button>Add to Cart</button>
-    </div>
-
-    <div class="product-card">
-      <img src="assets/images/noodles.png">
-      <h3>Instant Noodles</h3>
-      <p class="price">Rs 2.20</p>
-      <button>Add to Cart</button>
-    </div>
   </div>
-  <div class="see-more-wrapper">
-    <a routerLink="/grocery" class="see-more">See more →</a>
-  </div>
-</section>
 
-<!-- DRINKS -->
-<section class="products">
-  <h2>Drinks</h2>
-  <div class="product-grid">
-    <div class="product-card">
-      <img src="assets/images/colddrink.png">
-      <h3>Cold Drink</h3>
-      <p class="price">Rs 3.00</p>
-      <button>Add to Cart</button>
-    </div>
-
-    <div class="product-card">
-      <img src="assets/images/water.png">
-      <h3>Mineral Water</h3>
-      <p class="price">Rs 1.50</p>
-      <button>Add to Cart</button>
-    </div>
-
-    <div class="product-card">
-      <img src="assets/images/orange-juice.png">
-      <h3>Orange Juice</h3>
-      <p class="price">Rs 4.50</p>
-      <button>Add to Cart</button>
-    </div>
-
-    <div class="product-card">
-      <img src="assets/images/energy-drink.png">
-      <h3>Energy Drink</h3>
-      <p class="price">Rs 5.20</p>
-      <button>Add to Cart</button>
-    </div>
-
-    <div class="product-card">
-      <img src="assets/images/iced-tea.png">
-      <h3>Iced Tea</h3>
-      <p class="price">Rs 3.80</p>
-      <button>Add to Cart</button>
-    </div>
-  </div>
-  <div class="see-more-wrapper">
-    <a routerLink="/grocery" class="see-more">See more →</a>
-  </div>
-</section>
-
-<!-- STATIONERY -->
-<section class="products">
-  <h2>Stationery</h2>
-  <div class="product-grid">
-    <div class="product-card">
-      <img src="assets/images/notebooks.png">
-      <h3>Notebook Pack</h3>
-      <p class="price">Rs 12.00</p>
-      <button>Add to Cart</button>
-    </div>
-
-    <div class="product-card">
-      <img src="assets/images/pens.png">
-      <h3>Pen Set</h3>
-      <p class="price">Rs 5.00</p>
-      <button>Add to Cart</button>
-    </div>
-
-    <div class="product-card">
-      <img src="assets/images/pencils.png">
-      <h3>Pencils</h3>
-      <p class="price">Rs 3.50</p>
-      <button>Add to Cart</button>
-    </div>
-
-    <div class="product-card">
-      <img src="assets/images/marker.png">
-      <h3>Marker</h3>
-      <p class="price">Rs 4.00</p>
-      <button>Add to Cart</button>
-    </div>
-
-    <div class="product-card">
-      <img src="assets/images/stepler.png">
-      <h3>Stapler</h3>
-      <p class="price">Rs 6.50</p>
-      <button>Add to Cart</button>
-    </div>
-  </div>
-  <div class="see-more-wrapper">
-    <a routerLink="/grocery" class="see-more">See more →</a>
-  </div>
-</section>
-
-<!-- CAFE SERVICES -->
-<section class="products">
-  <h2>Cafe Services</h2>
-  <div class="product-grid">
-    <div class="product-card">
-      <img src="assets/images/printbw1side.png">
-      <h3>Printing (B/W -1 side)</h3>
-      <p class="price">Rs 1.0</p>
-      <button>Add to Cart</button>
-    </div>
-    <div class="product-card">
-      <img src="assets/images/printbw2side.png">
-      <h3>Printing (B/W - 2 sides)</h3>
-      <p class="price">Rs 2.0</p>
-      <button>Add to Cart</button>
-    </div>
-    <div class="product-card">
-      <img src="assets/images/printcolor1side.png">
-      <h3>Printing (Color - 1 side)</h3>
-      <p class="price">Rs 5.0</p>
-      <button>Add to Cart</button>
-    </div>
-    <div class="product-card">
-      <img src="assets/images/printcolor1side.png">
-      <h3>Printing (Color - 2 sides)</h3>
-      <p class="price">Rs 10.0</p>
-      <button>Add to Cart</button>
-    </div>
-
-    <div class="product-card">
-      <img src="assets/images/laminationsmall.png">
-      <h3>Lamination (Small)</h3>
-      <p class="price">Rs 10.00</p>
-      <button>Add to Cart</button>
-    </div>
-
-    <div class="product-card">
-      <img src="assets/images/laminationlarge.png">
-      <h3>Lamination (Large)</h3>
-      <p class="price">Rs 20.00</p>
-      <button>Add to Cart</button>
-    </div>
-  </div>
-  <div class="see-more-wrapper">
-    <a routerLink="/grocery" class="see-more">See more →</a>
-  </div>
 </section>
