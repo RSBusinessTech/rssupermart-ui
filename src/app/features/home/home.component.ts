@@ -123,7 +123,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
   }
 
-  isCartOpen: boolean = true;
+  isCartOpen: boolean = false;
 
   toggleCart() {
   this.isCartOpen = !this.isCartOpen;
