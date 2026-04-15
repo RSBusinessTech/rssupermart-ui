@@ -90,8 +90,41 @@
     </div>
   </div>
 
-<button (click)="sendCartToWhatsApp()" class="checkout-btn">
-  Buy now using <img src="assets/icons/whatsapp.svg" alt="WhatsApp" />
-</button>
+<div class="cart-preview" *ngIf="cartItems.length > 0">
 
+  <!-- HEADER (ALWAYS VISIBLE) -->
+  <div class="cart-header" (click)="toggleCart()">
+    <h3>
+      🛒 Cart
+      <span class="toggle-icon">
+        {{ isCartOpen ? '▼' : '▲' }}
+      </span>
+    </h3>
+  </div>
+
+  <!-- ITEMS (COLLAPSIBLE) -->
+  <div class="cart-items" #cartScroll *ngIf="isCartOpen">
+    <div *ngFor="let item of cartItems" class="cart-item">
+      <span>{{ item.name }} x{{ item.qty }}</span>
+      <span>Rs. {{ item.price * item.qty }}</span>
+    </div>
+  </div>
+
+  <button (click)="downloadPDF()" class="pdf-btn">
+    Download Bill
+  </button>
+   
+  <!-- FIXED BOTTOM (ALWAYS VISIBLE) -->
+  <div class="cart-bottom">
+    <div class="cart-info">
+      🛒 {{ cartItems.length }} items | Rs. {{ totalPrice }}
+    </div>
+
+    <button (click)="sendCartToWhatsApp()" class="cart-btn">
+      Click to Buy
+      <img src="assets/icons/whatsapp.svg" alt="WhatsApp" />
+    </button>
+  </div>
+
+</div>
 </section>
