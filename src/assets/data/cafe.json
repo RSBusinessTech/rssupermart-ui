@@ -1,0 +1,8 @@
+[
+  { "name": "Printing (B/W - 1 side)", "price": 1.0, "image": "assets/images/printbw1side.png" },
+  { "name": "Printing (B/W - 2 sides)", "price": 2.0, "image": "assets/images/printbw2side.png" },
+  { "name": "Printing (Color - 1 side)", "price": 5.0, "image": "assets/images/printcolor1side.png" },
+  { "name": "Printing (Color - 2 sides)", "price": 10.0, "image": "assets/images/printcolor1side.png" },
+  { "name": "Lamination (Small)", "price": 10.0, "image": "assets/images/laminationsmall.png" },
+  { "name": "Lamination (Large)", "price": 20.0, "image": "assets/images/laminationlarge.png" }
+]

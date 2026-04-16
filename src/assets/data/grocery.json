@@ -1,0 +1,7 @@
+[
+  { "name": "Cooking Oil", "price": 5.50, "image": "assets/images/cooking-oil.png" },
+  { "name": "Detergent", "price": 4.20, "image": "assets/images/detergent.png" },
+  { "name": "Tea Packet", "price": 6.80, "image": "assets/images/tea.png" },
+  { "name": "Bread", "price": 3.50, "image": "assets/images/bread.png" },
+  { "name": "Eggs (12 pcs)", "price": 8.00, "image": "assets/images/eggs.png" }
+]

@@ -1,0 +1,7 @@
+[
+  { "name": "Notebook Pack", "price": 12.00, "image": "assets/images/notebooks.png" },
+  { "name": "Pen Set", "price": 5.00, "image": "assets/images/pens.png" },
+  { "name": "Pencils", "price": 3.50, "image": "assets/images/pencils.png" },
+  { "name": "Marker", "price": 4.00, "image": "assets/images/marker.png" },
+  { "name": "Stapler", "price": 6.50, "image": "assets/images/stepler.png" }
+]

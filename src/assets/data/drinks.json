@@ -1,0 +1,7 @@
+[
+  { "name": "Cold Drink", "price": 3.00, "image": "assets/images/colddrink.png" },
+  { "name": "Mineral Water", "price": 1.50, "image": "assets/images/water.png" },
+  { "name": "Orange Juice", "price": 4.50, "image": "assets/images/orange-juice.png" },
+  { "name": "Energy Drink", "price": 5.20, "image": "assets/images/energy-drink.png" },
+  { "name": "Iced Tea", "price": 3.80, "image": "assets/images/iced-tea.png" }
+]

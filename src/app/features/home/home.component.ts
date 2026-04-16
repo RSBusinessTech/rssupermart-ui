@@ -16,29 +16,24 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   cartItems: any[] = [];
   totalPrice: number = 0;
+  isCartOpen: boolean = false;
 
-  // ✅ Angular 8 FIX (IMPORTANT)
   @ViewChild('cartScroll', { static: false }) cartScroll!: ElementRef;
 
-  constructor(
-    private productService: ProductsService,
-    private cartService: CartService
-  ) {}
-
+  constructor(private productService: ProductsService, private cartService: CartService) {}
+  
   ngOnInit(): void {
     this.productService.getAll().subscribe(data => {
-      this.categories = data;
-      this.allCategories = data;
-    });
+    this.categories = data;      
+    this.allCategories = data;
+   });
   }
 
   ngAfterViewInit(): void {
-    // initial load cart sync
     this.syncCart();
   }
 
   // ================= CART =================
-
   addToCart(product: any) {
     this.cartService.addToCart(product);
     this.syncCartAndScroll();
@@ -60,7 +55,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   // ================= SYNC =================
-
   private syncCart() {
     this.cartItems = this.cartService.getCart();
 
@@ -89,24 +83,21 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   // ================= FILTER =================
-
   getFilteredCategories() {
     return this.productService.search(this.categories, this.searchTerm);
   }
 
   // ================= WHATSAPP =================
-
   sendCartToWhatsApp() {
     const phoneNumber = "918284948635"; // remove + for wa.me
     const cart = this.cartService.getCart();
+    let message = "🛒 *My Order List*:%0A%0A";
+    let total = 0;
 
     if (cart.length === 0) {
       alert("Cart is empty!");
       return;
     }
-
-    let message = "🛒 *My Order List*:%0A%0A";
-    let total = 0;
 
     cart.forEach(item => {
       const itemTotal = item.price * item.qty;
@@ -123,11 +114,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
   }
 
-  isCartOpen: boolean = false;
-
   toggleCart() {
-  this.isCartOpen = !this.isCartOpen;
- }
+   this.isCartOpen = !this.isCartOpen;
+  }
 
  downloadPDF() {
   const doc = new (jsPDF as any)();
@@ -138,7 +127,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
   let total = 0;
 
   this.cartItems.forEach(item => {
-
     const line = `${item.name} x ${item.qty} = Rs. ${item.price * item.qty}`;
     doc.setFontSize(12);
     doc.text(line, 10, y);

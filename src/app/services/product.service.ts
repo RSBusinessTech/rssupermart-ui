@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { forkJoin, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 export interface Product {
   name: string;
@@ -19,14 +20,48 @@ export interface ProductCategory {
 })
 export class ProductsService {
 
-  private dataUrl = 'assets/data/products.json';
-
   constructor(private http: HttpClient) {}
 
+  // LOAD ALL CATEGORY FILES.
   getAll(): Observable<ProductCategory[]> {
-    return this.http.get<ProductCategory[]>(this.dataUrl);
-  }
+  return forkJoin([
+    this.http.get<Product[]>('assets/data/grocery.json'),
+    this.http.get<Product[]>('assets/data/snacks.json'),
+    this.http.get<Product[]>('assets/data/drinks.json'),
+    this.http.get<Product[]>('assets/data/stationery.json'),
+    this.http.get<Product[]>('assets/data/cafe.json')
+  ]).pipe(
+    map((data: any[]) => [
+      {
+        category: 'Grocery',
+        routerLink: '/grocery',
+        products: data[0]
+      },
+      {
+        category: 'Snacks',
+        routerLink: '/snacks',
+        products: data[1]
+      },
+      {
+        category: 'Drinks',
+        routerLink: '/drinks',
+        products: data[2]
+      },
+      {
+        category: 'Stationery',
+        routerLink: '/stationery',
+        products: data[3]
+      },
+      {
+        category: 'Cafe Services',
+        routerLink: '/cafe',
+        products: data[4]
+      }
+    ])
+  );
+}
 
+  // ✅ SEARCH FUNCTION (same as before)
   search(categories: ProductCategory[], term: string): ProductCategory[] {
     if (!term.trim()) return categories;
 

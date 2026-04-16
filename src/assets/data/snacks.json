@@ -1,0 +1,7 @@
+[
+  { "name": "Sandwich", "price": 4.00, "image": "assets/images/sandwich.png" },
+  { "name": "Chips", "price": 3.00, "image": "assets/images/chips.png" },
+  { "name": "Chocolate Bar", "price": 2.50, "image": "assets/images/chocolate.png" },
+  { "name": "Cookies", "price": 4.80, "image": "assets/images/cookies.png" },
+  { "name": "Instant Noodles", "price": 2.20, "image": "assets/images/noodles.png" }
+]
