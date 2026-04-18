@@ -11,7 +11,7 @@ export class AboutComponent implements OnInit {
    {
      name: 'Vijay Kumar',
      branch: 'RS SuperMart - Dharamkot Bagga',
-     ownerImage: '/assets/images/Pic4.jpeg',
+     ownerImage: '/assets/images/Owner1.jpeg',
      branchImage: '/assets/images/grocery-banner.jpg',
      description: 'Owner at Dharamkot Bagga Branch of RS SuperMart, committed to quality and customer satisfaction.'
    }

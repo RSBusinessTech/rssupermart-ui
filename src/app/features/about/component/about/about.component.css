@@ -39,6 +39,54 @@
 
 .about-text h2 {
   margin-bottom: 10px;
+  color: rgb(194, 20, 20);
+  font-size: 50px;       /* bigger */
+  font-weight: 700;      /* bold */
+  animation: slideInFadeRepeat 2s ease-in-out infinite alternate;
+}
+
+.owners h2 {
+  margin-bottom: 10px;
+  color: green;
+  font-size: 52px;       /* bigger */
+  font-weight: 700;      /* bold */
+  animation: bounceFade 2s ease-in-out infinite; /* repeating animation */
+}
+
+/* Keyframes for bounce + fade */
+@keyframes bounceFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1.1); /* slight overshoot */
+  }
+  60% {
+    opacity: 1;
+    transform: scale(0.95); /* settle back */
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1); /* final size */
+  }
+}
+
+/* Keyframes for repeating slide + fade */
+@keyframes slideInFadeRepeat {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
 }
 
 .about-image {
@@ -173,7 +221,7 @@
 /* Branch image (top banner) */
 .branch-img img {
   width: 100%;
-  height: 340px;
+  height: 250px;
   object-fit: cover;
 }
 
@@ -237,3 +285,19 @@
   }
 }
 
+@media (min-width: 1024px) {
+
+  .owners-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    justify-items: center;
+  }
+
+  /* 👇 Center last single card when odd number */
+  .owner-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;  /* span full row */
+    justify-self: center; /* center it */
+  }
+
+}
