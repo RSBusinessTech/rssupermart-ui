@@ -22,7 +22,7 @@ export class ProductsService {
 
   constructor(private http: HttpClient) {}
 
-  // LOAD ALL CATEGORY FILES.
+  //Get all products.
   getAll(): Observable<ProductCategory[]> {
   return forkJoin([
     this.http.get<Product[]>('assets/data/grocery.json'),
@@ -59,9 +59,34 @@ export class ProductsService {
       }
     ])
   );
-}
+ }
 
-  // ✅ SEARCH FUNCTION (same as before)
+  //Get grocery products.
+  getGroceryProducts(): Observable<Product[]> {
+   return this.http.get<Product[]>('assets/data/grocery.json');
+  }
+
+  //Get snacks products.
+  getSnacksProducts(): Observable<Product[]> {
+   return this.http.get<Product[]>('assets/data/snacks.json');
+  }
+
+  //Get drinks products.
+  getDrinksProducts(): Observable<Product[]> {
+   return this.http.get<Product[]>('assets/data/drinks.json');
+  }
+
+  //Get stationery products.
+  getStationeryProducts(): Observable<Product[]> {
+   return this.http.get<Product[]>('assets/data/stationery.json');
+  }
+
+  //Get cafe services.
+  getCafeServices(): Observable<Product[]> {
+   return this.http.get<Product[]>('assets/data/cafe.json');
+  }
+
+  //Search function.
   search(categories: ProductCategory[], term: string): ProductCategory[] {
     if (!term.trim()) return categories;
 

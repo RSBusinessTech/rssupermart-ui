@@ -1,0 +1,240 @@
+/* ================= SEARCH ================= */
+.search-section {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  padding: 10px;
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 600px;
+  padding: 14px 18px;
+  font-size: 16px;
+  border-radius: 50px;
+  border: 2px solid #e5e7eb;
+  outline: none;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.search-bar:focus {
+  border-color: #22c55e;
+  box-shadow: 0 8px 22px rgba(34, 197, 94, 0.25);
+  transform: translateY(-1px);
+}
+
+.search-bar::placeholder {
+  color: #9ca3af;
+}
+
+/* ================= PRODUCTS ================= */
+.products {
+  padding: 20px 5%;
+}
+
+.products h2 {
+  margin-bottom: 20px;
+  color: rgb(194, 20, 20);
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.product-card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  transition: 0.3s;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+}
+
+.product-card:hover {
+  background: green;
+  transform: translateY(-5px);
+}
+
+.product-card:hover h3,
+.product-card:hover .price {
+  color: white;
+}
+
+.products h2 {
+  margin-bottom: 20px;
+  color: rgb(194, 20, 20);
+  font-size: 52px;       /* bigger */
+  font-weight: 700;      /* bold */
+  animation: slideInFadeRepeat 2s ease-in-out infinite alternate;
+}
+
+/* Keyframes for repeating slide + fade */
+@keyframes slideInFadeRepeat {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+}
+
+
+/* PRICE + QTY */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  gap: 10px;
+}
+
+.price {
+  color: #28a745;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 0;
+}
+
+/* ================= QTY BUTTON ================= */
+.qty-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.qty-box button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.qty-box button:first-child {
+  background: #f3f4f6;
+}
+
+.qty-box button:last-child {
+  background: #22c55e;
+  color: white;
+}
+
+.qty-box button:hover {
+  transform: scale(1.1);
+}
+
+.qty-box span {
+  font-weight: 600;
+}
+
+/* ================= CART ================= */
+.cart-preview {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92%;
+  max-width: 420px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  z-index: 9999;
+}
+
+.cart-header {
+  cursor: pointer;
+  padding-bottom: 8px;
+}
+
+.cart-items {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 2px solid #eee;
+}
+
+.cart-btn {
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.cart-btn:hover {
+  background: #25D366;
+}
+
+/* ================= PDF BUTTON ================= */
+.pdf-btn {
+  background: #22c55e;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 25px;
+  font-size: 13px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.pdf-btn:hover {
+  background: white;
+  color: #22c55e;
+  border: 2px solid #22c55e;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .products h2 {
+    font-size: 26px;
+  }
+}
