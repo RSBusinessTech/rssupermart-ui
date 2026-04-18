@@ -50,7 +50,7 @@
   color: green;
   font-size: 52px;       /* bigger */
   font-weight: 700;      /* bold */
-  animation: bounceFade 2s ease-in-out infinite; /* repeating animation */
+  animation: bounceFade 5s ease-in-out infinite; /* repeating animation */
 }
 
 /* Keyframes for bounce + fade */
@@ -283,10 +283,24 @@
    width: 100px;
    height: 100px;
   }
+
+  .about-section {
+    padding-bottom: 15px; /* reduce gap after image */
+  }
+
+ .owners {
+    padding-top: 15px; /* reduce gap before owners section */
+  }
+
+  .owners h2 {
+    font-size: 25px;       /* bigger */
+    font-weight: 700;      /* bold */
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
 }
 
 @media (min-width: 1024px) {
-
   .owners-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -299,5 +313,5 @@
     grid-column: 1 / -1;  /* span full row */
     justify-self: center; /* center it */
   }
-
 }
+
