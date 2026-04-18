@@ -492,39 +492,10 @@ transition:0.3s;
   cursor: pointer;
 }
 
-/* .cart-preview {
-  padding: 15px;
-  background: #fff;
-  margin: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-} */
-
 .cart-item {
   font-size: 14px;
   margin-bottom: 8px;
 }
-
-/* 
-.cart-preview {
-  position: fixed;
-  bottom: 90px; 
-  left: 50%;
-  transform: translateX(-50%);
-
-  width: 92%;
-  max-width: 420px;
-
-  background: #ffffff;
-  border-radius: 16px;
-
-  padding: 14px 16px;
-
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  z-index: 9998;
-
-  animation: slideUp 0.3s ease;
-} */
 
 /* ================= CART ================= */
 .cart-preview {
@@ -589,18 +560,6 @@ transition:0.3s;
   color: #111;
 }
 
-/* EACH ITEM */
-/* .cart-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  font-size: 14px;
-  padding: 6px 0;
-
-  border-bottom: 1px solid #f1f1f1;
-} */
-
 /* REMOVE LAST BORDER */
 .cart-item:last-child {
   border-bottom: none;
@@ -616,12 +575,6 @@ transition:0.3s;
   font-weight: 600;
   color: #25D366; /* WhatsApp green */
 }
-
-/* SCROLL IF TOO MANY ITEMS */
-/* .cart-preview {
-  max-height: 200px;
-  overflow-y: auto;
-} */
 
 /* SMOOTH SCROLL */
 .cart-preview::-webkit-scrollbar {
@@ -644,18 +597,6 @@ transition:0.3s;
     transform: translate(-50%, 0);
   }
 }
-
-/* BOTTOM ROW */
-/* .cart-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  margin-top: 12px;
-  padding-top: 10px;
-
-  border-top: 2px solid #eee;
-} */
 
 /* LEFT SIDE */
 .cart-info {
@@ -697,51 +638,10 @@ transition:0.3s;
   transform: scale(1.05);
 }
 
-/* .cart-preview {
-  position: fixed;
-  bottom: 0px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 92%;
-  max-width: 420px;
-
-  background: #fff;
-  border-radius: 16px;
-
-  display: flex;
-  flex-direction: column;
-
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  z-index: 9998;
-
-  animation: slideUp 0.3s ease;
-} */
-
-/* .cart-items {
-  max-height: 200px;
-  overflow-y: auto;
-  scroll-behavior: smooth;
-} */
-
 /* EXPANDED HEIGHT */
 .cart-items.expanded {
   max-height: 65vh;  /* 👈 BIG VIEW MODE */
 }
-
-/* keep bottom always visible */
-/* .cart-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  margin-top: 12px;
-  padding-top: 10px;
-  border-top: 2px solid #eee;
-
-  background: #fff;
-  position: sticky;
-  bottom: 0;
-} */
 
 @media (max-width: 768px) {
   .cart-preview {
