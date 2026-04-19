@@ -28,32 +28,35 @@
   <h2>Our Branches & Owners</h2>
 
   <div class="owners-grid">
+   <div class="owner-card" *ngFor="let owner of owners">
+     <div class="branch-img">
+       <img [src]="owner.branchImage" alt="Branch Image">
+     </div>
 
-    <div class="owner-card" *ngFor="let owner of owners">
+     <div class="owner-row">
+     <!-- LEFT SIDE (Owner Info) -->
+     <div class="owner-left">
+      <img class="owner-img" [src]="owner.ownerImage" alt="Owner Image">
 
-      <!-- Branch Image -->
-      <div class="branch-img">
-        <a [href]="owner.branchImage" target="_blank">
-          <img [src]="owner.branchImage" alt="Branch Image">
-        </a>
-      </div>
+      <h3>{{ owner.name }}</h3>
+      <p class="role">{{ owner.branch }}</p>
 
-      <!-- Owner Info -->
-      <div class="owner-info">
-        <a [href]="owner.ownerImage" target="_blank">
-          <img class="owner-img" [src]="owner.ownerImage" alt="Owner Image">
-        </a>
+      <p class="desc">
+        {{ owner.description }}
+      </p>
+     </div>
 
-        <h3>{{ owner.name }}</h3>
-        <p class="role">{{ owner.branch }}</p>
-
-        <p class="desc">
-          {{ owner.description }}
-        </p>
-      </div>
-
+     <!-- RIGHT SIDE (Google Map) -->
+     <div class="owner-right">
+       <iframe
+         class="google-map"
+         [src]="owner.embedMap | safeUrl"
+         loading="lazy">
+       </iframe><br>
+        <p class="map-label"><img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Location" style="width:20px; height:20px;">&nbsp;View on Google Map</p>
+     </div>
     </div>
-
+   </div>
    </div>
   </section>
 
