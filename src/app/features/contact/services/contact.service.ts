@@ -9,8 +9,8 @@ import { Observable } from 'rxjs';
 export class ContactService {
 
   //URL of Rest-API to be called to send email.
-  private url = "https://rsbusinesstech-backend.onrender.com/contact/sendEmailVyenPropertyAdvisor";
-  //private url = "http://127.0.0.1:8080/contact/sendEmailVyenPropertyAdvisor";
+  private url = "https://rsbusinesstech-backend.onrender.com/contact/sendEmail";
+  //private url = "http://127.0.0.1:8080/contact/sendEmail";
 
   //Dependency Injection of HttpClient(Constrcutor DI).
   constructor(private httpClient: HttpClient) { }

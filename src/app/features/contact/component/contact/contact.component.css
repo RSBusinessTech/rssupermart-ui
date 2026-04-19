@@ -1,0 +1,144 @@
+/* SECTION BACKGROUND */
+.contact-section {
+  padding: 4rem 1rem;
+  background: linear-gradient(to right, #fdf2f2, #eef4ff); /* light red → light blue */
+}
+
+/* CONTAINER */
+.contact-section .container {
+  max-width: 850px;
+  margin: auto;
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+  border-top: 5px solid green; /* RED (from RS logo) */
+}
+
+/* HEADER */
+.contact-section .container h2 {
+  text-align: center;
+  color: rgb(194, 20, 20);
+  font-size: 2.5rem;       /* bigger */
+  font-weight: 700;      /* bold */
+  animation: slideInFadeRepeat 2s ease-in-out infinite alternate;
+}
+
+.contact-section .container p {
+  text-align: center;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+/* FORM */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ROW */
+.contact-form .form-row {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* INPUT GROUP */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 45%;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #333;
+}
+
+/* INPUT FIELDS */
+.form-group input,
+.form-group textarea {
+  padding: 0.8rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  background: #fafafa;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #2e639b; /* BLUE focus */
+  background: #fff;
+  box-shadow: 0 0 0 2px rgba(0, 86, 179, 0.15);
+  outline: none;
+}
+
+/* TEXTAREA */
+.form-group textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+/* BUTTON */
+.contact-form button {
+  background: linear-gradient(135deg, #e60000, #0056b3); /* RED → BLUE */
+  color: #fff;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: linear-gradient(135deg, #cc0000, #004099);
+  transform: translateY(-1px);
+}
+
+.contact-form button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* OPTIONAL GREEN ACCENT (for small highlights if needed) */
+.contact-section .container::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 60px;
+  background:  blue; /* GREEN */
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+/* Keyframes for repeating slide + fade */
+@keyframes slideInFadeRepeat {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .contact-section .container {
+    padding: 1.5rem;
+  }
+
+  .contact-section .container h2 {
+    font-size: 2rem;
+  }
+}

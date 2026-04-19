@@ -30,13 +30,17 @@
   <div class="owners-grid">
    <div class="owner-card" *ngFor="let owner of owners">
      <div class="branch-img">
-       <img [src]="owner.branchImage" alt="Branch Image">
+       <a [href]="owner.branchImage" target="_blank" rel="noopener noreferrer">
+        <img [src]="owner.branchImage" alt="Branch Image">
+       </a>
      </div>
 
      <div class="owner-row">
      <!-- LEFT SIDE (Owner Info) -->
      <div class="owner-left">
-      <img class="owner-img" [src]="owner.ownerImage" alt="Owner Image">
+      <a [href]="owner.ownerImage" target="_blank" rel="noopener noreferrer">
+       <img class="owner-img" [src]="owner.ownerImage" alt="Owner Image">
+      </a>
 
       <h3>{{ owner.name }}</h3>
       <p class="role">{{ owner.branch }}</p>
