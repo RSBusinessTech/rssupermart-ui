@@ -12,5 +12,46 @@
   <lastmod>2026-04-12T14:58:12+00:00</lastmod>
 </url>
 
+<url>
+  <loc>https://rssupermart.com/grocery/</loc>
+  <lastmod>2026-04-20</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://rssupermart.com/snacks/</loc>
+  <lastmod>2026-04-20</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://rssupermart.com/drinks/</loc>
+  <lastmod>2026-04-20</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://rssupermart.com/stationery/</loc>
+  <lastmod>2026-04-20</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://rssupermart.com/cafe/</loc>
+  <lastmod>2026-04-20</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://rssupermart.com/about/</loc>
+  <lastmod>2026-04-20</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://rssupermart.com/contact/</loc>
+  <lastmod>2026-04-20</lastmod>
+  <priority>0.8</priority>
+</url>
 
 </urlset>

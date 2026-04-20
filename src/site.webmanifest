@@ -1,0 +1,21 @@
+{
+  "name": "RS SuperMart",
+  "short_name": "RSSM",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#e60000",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/assets/icons/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
