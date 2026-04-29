@@ -1,7 +1,69 @@
 [
-  { "name": "Cooking Oil", "price": 5.50, "image": "assets/images/cooking-oil.png" },
-  { "name": "Detergent", "price": 4.20, "image": "assets/images/detergent.png" },
-  { "name": "Tea Packet", "price": 6.80, "image": "assets/images/tea.png" },
-  { "name": "Bread", "price": 3.50, "image": "assets/images/bread.png" },
-  { "name": "Eggs (12 pcs)", "price": 8.00, "image": "assets/images/eggs.png" }
+  { "name": "Sugar (1kg)", "price": 47, "image": "assets/images/sugar.png" },
+  { "name": "Tata Tea Agni", "price": 50, "image": "assets/images/tataagnitea.webp" },
+  { "name": "Tata Tea Agni (Masala)", "price": 80, "image": "assets/images/tataagnitea.webp" },
+
+
+  { "name": "Vishnu Mustard Oil (1/2L)", "price": 80, "image": "assets/images/vishnumustardoil.jpeg" },
+  { "name": "Vishnu Mustard Oil (1/2L)", "price": 160, "image": "assets/images/vishnumustardoil.jpeg" },
+  { "name": "Refined Oil pending (1/2 Kg)", "price": 80, "image": "assets/icons/RSSuperMartLogo.png" },
+  { "name": "Refined Oil pending(1 Kg)", "price": 165, "image": "assets/icons/RSSuperMartLogo.png" },
+  { "name": "Gagan Vanaspati Ghee (1/2 Kg)", "price": 80, "image": "assets/images/gaganvanaspatighee.webp" },
+  { "name": "Gagan Vanaspati Ghee (1 Kg)", "price": 160, "image": "assets/images/gaganvanaspatighee.webp" },
+
+  { "name": "Tata Salt", "price": 30, "image": "assets/images/tatasalt.jpg" },
+  { "name": "Red chili powder pending (Degi Mirch)", "price": 10, "image": "assets/icons/RSSuperMartLogo.png" },
+  { "name": "Masala pending (50g)", "price": 10, "image": "assets/icons/RSSuperMartLogo.png" },
+  { "name": "Masala pending (100g)", "price": 10, "image": "assets/icons/RSSuperMartLogo.png" },
+  { "name": "Turmeric pending (Haldi)", "price": 20, "image": "assets/icons/RSSuperMartLogo.png" },
+  { "name": "Turmeric pending (Haldi)", "price": 40, "image": "assets/icons/RSSuperMartLogo.png" },
+  { "name": "Turmeric pending (Haldi)", "price": 80, "image": "assets/icons/RSSuperMartLogo.png" },
+  { "name": "Carom seeds pending(Ajwain-packet)", "price": 40, "image": "assets/images/caromseedsajwain.jpg" },
+  { "name": "Saunf (Fennel) (packet)", "price": 40, "image": "assets/images/saunf.jpg" },
+
+  { "name": "Kesari Nirol Soap (Desi Sabun) [3 pcs]", "price": 30, "image": "assets/images/kesarinirol.jpg" },
+  { "name": "Surf Excel Easy Detergent pending (1/2 kg)", "price": 22, "image": "assets/images/surfexceldetergent.jpg" },
+  { "name": "Surf Excel Easy Detergent pending (1 kg)", "price": 22, "image": "assets/images/surfexceldetergent.jpg" },
+  { "name": "Surf Excel Easy Detergent pending (1 kg)", "price": 22, "image": "assets/images/surfexceldetergent.jpg" },
+  { "name": "Zigma Detergent", "price": 10, "image": "assets/images/zigma.jpg" },
+  { "name": "Zigma Detergent", "price": 20, "image": "assets/images/zigma.jpg" },
+  { "name": "Zigma Detergent pending", "price": 22, "image": "assets/images/zigma.jpg" },
+  { "name": "Ghadi Detergent", "price": 10, "image": "assets/images/ghadi.jpg" },
+
+  { "name": "Nirma Detergent pending", "price": 5, "image": "assets/images/nirma.jpg" },
+
+  { "name": "Patanjali Super Dishwasher Bar (Bartan Sabun)", "price": 10, "image": "assets/icons/RSSuperMartLogo.png" },
+
+  { "name": "Steel Wool (Dish Scrubber)", "price": 10, "image": "assets/icons/RSSuperMartLogo.png" },
+
+  { "name": "Incense stick pending (Agarbatti)", "price": 10, "image": "assets/icons/RSSuperMartLogo.png" },
+  { "name": "Incense stick pending(Agarbatti)", "price": 20, "image": "assets/icons/RSSuperMartLogo.png" },
+  { "name": "Matchbox (Match Sticks) pending", "price": 10, "image": "assets/icons/RSSuperMartLogo.png" },
+  { "name": "Matchbox (Match Sticks) pending", "price": 20, "image": "assets/icons/RSSuperMartLogo.png" },
+
+  { "name": "Green cardamom Pending(Hari Ilaichi)", "price": 10, "image": "assets/icons/RSSuperMartLogo.png" },
+
+  { "name": "Harpic", "price": 139, "image": "assets/icons/RSSuperMartLogo.png" },
+  { "name": "Harpic Pending", "price": 139, "image": "assets/icons/RSSuperMartLogo.png" },
+
+  { "name": "Colgate Toothpaste", "price": 10, "image": "assets/images/colgate.png" },
+  { "name": "Colgate Toothpaste", "price": 20, "image": "assets/images/colgate.png" },
+  { "name": "Colgate Toothpaste pending", "price": 55, "image": "assets/images/colgate.png" },
+
+  { "name": "Pepsodent Toothpaste", "price": 10, "image": "assets/images/colgate.png" },
+  { "name": "Pepsodent Toothpaste", "price": 20, "image": "assets/images/colgate.png" },
+  { "name": "Pepsodent Toothpaste pending", "price": 20, "image": "assets/images/colgate.png" },
+
+  { "name": "Dabur Red Toothpaste", "price": 10, "image": "assets/images/dabur.png" },
+  { "name": "Dabur Red Toothpaste", "price": 20, "image": "assets/images/dabur.png" },
+  { "name": "Dabur Red Toothpaste", "price": 55, "image": "assets/images/dabur.png" },
+  { "name": "Dabur Red Toothpaste", "price": 70, "image": "assets/images/dabur.png" },
+  { "name": "Dabur Red Toothpaste", "price": 130, "image": "assets/images/dabur.png" },
+
+  { "name": "Closeup Toothpaste", "price": 10, "image": "assets/images/closeup.png" },
+  { "name": "Closeup Toothpaste", "price": 20, "image": "assets/images/closeup.png" },
+  { "name": "Closeup Toothpaste", "price": 55, "image": "assets/images/closeup.png" },
+
+  { "name": "Toothbrush pending", "price": 15, "image": "assets/icons/RSSuperMartLogo.png" },
+  { "name": "Toothbrush pending", "price": 20, "image": "assets/icons/RSSuperMartLogo.png" }
 ]
