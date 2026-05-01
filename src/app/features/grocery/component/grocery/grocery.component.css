@@ -64,7 +64,8 @@
 }
 
 .product-card:hover {
-  background: green;
+  /* background: green; */
+  background: black;
   transform: translateY(-5px);
 }
 
@@ -106,12 +107,24 @@
   margin-top: 12px;
   gap: 10px;
 }
-
+/* 
 .price {
   color: #28a745;
   font-weight: bold;
   font-size: 16px;
   margin: 0;
+} */
+
+.price {
+  color: #1a1a1a;
+  font-weight: 700;
+  font-size: 18px;
+  margin: 0;
+  padding: 4px 10px;
+  background: linear-gradient(90deg, #ffe082, #ffca28);
+  border-radius: 6px;
+  display: inline-block;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 /* ================= QTY BUTTON ================= */
@@ -136,6 +149,8 @@
   background: #f3f4f6;
 }
 
+
+
 .qty-box button:last-child {
   background: #22c55e;
   color: white;
@@ -148,6 +163,8 @@
 .qty-box span {
   font-weight: 600;
 }
+
+
 
 /* ================= CART ================= */
 .cart-preview {
@@ -237,4 +254,32 @@
   .products h2 {
     font-size: 26px;
   }
+}
+
+/* Wrap quantity label + buttons */
+.qty-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Quantity label like "1 kg" */
+.qty-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #2563eb;
+  background: #e0edff;
+  padding: 4px 10px;
+  border-radius: 6px;
+  display: inline-block;
+  min-width: 50px;
+  text-align: center;
+}
+
+/* Keep your existing qty-box but improve spacing */
+.qty-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
