@@ -64,8 +64,8 @@
 }
 
 .product-card:hover {
-  /* background: green; */
-  background: black;
+  background: green;
+  /* background: black; */
   transform: translateY(-5px);
 }
 
