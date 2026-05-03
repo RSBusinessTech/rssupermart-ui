@@ -24,7 +24,6 @@
 
   { "name": "Carom Seeds(Ajwain)", "price": 40, "quantity": "1 packet",  "image": "assets/images/caromseedsajwain.jpg" },
   { "name": "Saunf (Fennel)", "price": 40, "quantity": "1 packet",  "image": "assets/images/saunf.jpg" },
-  { "name": "Green cardamom pending (Hari Ilaichi)", "price": 10, "quantity": "1 packet",  "image": "assets/icons/RSSuperMartLogo.png" },
   { "name": "Tamarind (Imli)", "price": 25, "quantity": "1 packet",  "image": "assets/images/tamarind.jpg" },
   { "name": "Vishal Jeera (Cumin Seeds)", "price": 40, "quantity": "100g packet",  "image": "assets/images/vishaljeerapacket.jpg" },
 
