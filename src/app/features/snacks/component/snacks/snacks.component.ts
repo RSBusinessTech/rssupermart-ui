@@ -27,6 +27,7 @@ export class SnacksComponent implements OnInit, AfterViewInit {
   ) {}
 
   ngOnInit(): void {
+   window.scrollTo({ top: 0, behavior: 'smooth' });
    this.productService.getSnacksProducts()
     .subscribe(products => {
       this.snacksProducts = products;

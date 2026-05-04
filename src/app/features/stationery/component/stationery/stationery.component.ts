@@ -26,6 +26,7 @@ export class StationeryComponent implements OnInit, AfterViewInit {
   ) {}
 
   ngOnInit(): void {
+   window.scrollTo({ top: 0, behavior: 'smooth' });
    this.productService.getStationeryProducts()
     .subscribe(products => {
       this.stationeryProducts = products;

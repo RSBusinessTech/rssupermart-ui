@@ -7,17 +7,33 @@ export class CartService {
 
   private cart: any[] = [];
 
+// addToCart(product: any) {
+//   const existing = this.cart.find(p => p.name === product.name);
+
+//   if (existing) {
+//     existing.qty += 1;
+//   } else {
+//     this.cart.push({ ...product, qty: 1 });
+//   }
+// }
+
 addToCart(product: any) {
-  const existing = this.cart.find(p => p.name === product.name);
+    const existing = this.cart.find(p =>
+      p.name === product.name &&
+      p.quantity === product.quantity
+    );
 
-  if (existing) {
-    existing.qty += 1;
-  } else {
-    this.cart.push({ ...product, qty: 1 });
+    if (existing) {
+      existing.qty++;
+    } else {
+      this.cart.push({ ...product, qty: 1 });
+    }
   }
-}
 
-  getCart() {
+  // getCart() {
+  //   return this.cart;
+  // }
+    getCart() {
     return this.cart;
   }
 
@@ -25,15 +41,30 @@ addToCart(product: any) {
     this.cart = [];
   }
 
-  decreaseQty(product: any) {
-  const existing = this.cart.find(p => p.name === product.name);
+//   decreaseQty(product: any) {
+//   const existing = this.cart.find(p => p.name === product.name);
 
-  if (!existing) return;
+//   if (!existing) return;
 
-  existing.qty -= 1;
+//   existing.qty -= 1;
 
-  if (existing.qty <= 0) {
-    this.cart = this.cart.filter(p => p.name !== product.name);
+//   if (existing.qty <= 0) {
+//     this.cart = this.cart.filter(p => p.name !== product.name);
+//   }
+// }
+
+    decreaseQty(product: any) {
+    const item = this.cart.find(p =>
+      p.name === product.name &&
+      p.quantity === product.quantity
+    );
+
+    if (!item) return;
+
+    item.qty--;
+
+    if (item.qty <= 0) {
+      this.cart = this.cart.filter(p => p !== item);
+    }
   }
-}
 }

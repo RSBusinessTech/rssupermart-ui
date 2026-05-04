@@ -1,100 +1,539 @@
 [
-  { "name": "Sugar", "price": 11.75,  "quantity": "250 g", "image": "assets/images/sugar.png" },
-  { "name": "Tata Tea Agni", "price": 50, "quantity": "1 packet", "image": "assets/images/tataagnitea.webp" },
-  { "name": "Tata Tea Agni (Elaichi Chai)", "price": 80, "quantity": "1 packet", "image": "assets/images/agniteagreen.jpg" },
-  { "name": "Nescafe Coffee", "price": 2, "quantity": "1 packet",  "image": "assets/images/nescafecoffee.jpg" },
-
-
-  { "name": "Vishnu Mustard Oil", "price": 80, "quantity": "1/2 L",  "image": "assets/images/vishnumustardoil.jpeg" },
-  { "name": "Vishnu Mustard Oil", "price": 160, "quantity": "1 L",  "image": "assets/images/vishnumustardoil.jpeg" },
-  { "name": "Refined Oil bottle", "price": 80, "quantity": "1/2 L",  "image": "assets/images/viborrefinedoil.jpeg" },
-  { "name": "Refined Oil packet", "price": 160, "quantity": "1 L",  "image": "assets/images/viborrefinedoilpacket.jpg" },
-  { "name": "Gagan Vanaspati Ghee", "price": 80, "quantity": "1/2 kg",  "image": "assets/images/gaganvanaspatighee.webp" },
-  { "name": "Gagan Vanaspati Ghee", "price": 160, "quantity": "1 kg",  "image": "assets/images/gaganvanaspatighee.webp" },
-
-  { "name": "Tata Salt", "price": 30, "quantity": "1 packet",  "image": "assets/images/tatasalt.jpg" },
-  { "name": "Red chili powder (Degi Mirch)", "price": 10, "quantity": "1 packet",  "image": "assets/images/vishalchillipowder.jpeg" },
-  { "name": "Red chili powder", "price": 50, "quantity": "100g packet",  "image": "assets/images/redchillipowderpacket.jpg" },
-  { "name": "Sidhant Garam Masala", "price": 40, "quantity": "50g packet",  "image": "assets/images/sidhantgarammasala.jpg" },
-  { "name": "Sidhant Garam Masala", "price": 80, "quantity": "100g packet",  "image": "assets/images/sidhantgarammasala.jpg" },
-  { "name": "Sidhant Turmeric Powder (Haldi)", "price": 20, "quantity": "50g packet",  "image": "assets/images/sidhantturmeric.jpg" },
-  { "name": "Sidhant Turmeric Powder (Haldi)", "price": 40, "quantity": "100g packet",  "image": "assets/images/sidhantturmeric.jpg" },
-  { "name": "Sidhant Turmeric Powder (Haldi)", "price": 80, "quantity": "200g packet",  "image": "assets/images/sidhantturmeric.jpg" },
-  { "name": "Saroya Turmeric Powder  (Haldi)", "price": 10, "quantity": "1 packet",  "image": "assets/images/saroyaturmericpacket.jpg" },
-
-  { "name": "Carom Seeds(Ajwain)", "price": 40, "quantity": "1 packet",  "image": "assets/images/caromseedsajwain.jpg" },
-  { "name": "Saunf (Fennel)", "price": 40, "quantity": "1 packet",  "image": "assets/images/saunf.jpg" },
-  { "name": "Tamarind (Imli)", "price": 25, "quantity": "1 packet",  "image": "assets/images/tamarind.jpg" },
-  { "name": "Vishal Jeera (Cumin Seeds)", "price": 40, "quantity": "100g packet",  "image": "assets/images/vishaljeerapacket.jpg" },
-
-  { "name": "1121 Basmati Rice", "price": 25, "quantity": "250 g",  "image": "assets/images/1121basmatirice.jpg" },
-  { "name": "Basmati Rice Tota (Kaniya)", "price": 10, "quantity": "250 g",  "image": "assets/images/basmatitotarice.jpg" },
-
-  { "name": "Moong Dal Sabut (Sabut Moongi) ", "price": 40, "quantity": "50 g",  "image": "assets/images/moongdalsabut.jpg" },
-  { "name": "Masoor Dal Sabut (Sabut Masoor)", "price": 40, "quantity": "50 g",  "image": "assets/images/masoordalsabut.jpg" },
-  { "name": "Moongi Dal (Moongi)", "price": 40, "quantity": "50 g",  "image": "assets/images/moongidal.jpg" },
-  { "name": "Masoor Dal (Dale Masoor)", "price": 40, "quantity": "50 g",  "image": "assets/images/masoordal.jpg" },
-  { "name": "Chana Dal", "price": 40, "quantity": "50 g",  "image": "assets/images/chanadal.jpg" },
-  { "name": "Kala Chana", "price": 40, "quantity": "50 g",  "image": "assets/images/kalachana.jpg" },
-  { "name": "White Chana", "price": 40, "quantity": "50 g",  "image": "assets/images/whitechana.jpg" },
-
-  { "name": "Kesari Nirol Soap (Desi Sabun)", "price": 30, "quantity": "1 packet - 3 pcs",  "image": "assets/images/kesarinirol.jpg" },
-  { "name": "Surf Excel Easy Detergent", "price": 22, "quantity": "1 packet",  "image": "assets/images/surfexceldetergent.jpg" },
-  { "name": "Surf Excel Easy Detergent", "price": 22, "quantity": "1 packet",  "image": "assets/images/surfexceldetergent.jpg" },
-  { "name": "Surf Excel Easy Detergent", "price": 22, "quantity": "1 packet",  "image": "assets/images/surfexceldetergent.jpg" },
-  { "name": "Zigma Detergent", "price": 10, "quantity": "1 packet",  "image": "assets/images/zigma.jpg" },
-  { "name": "Zigma Detergent", "price": 20, "quantity": "1 packet",  "image": "assets/images/zigma.jpg" },
-  { "name": "Zigma Detergent", "price": 22, "quantity": "1 packet",  "image": "assets/images/zigma.jpg" },
-  { "name": "Ghadi Detergent", "price": 10, "quantity": "1 packet",  "image": "assets/images/ghadi.jpg" },
-  { "name": "Nirma Detergent", "price": 5, "quantity": "1 packet",  "image": "assets/images/nirma.jpg" },
-  { "name": "Akash Neel Powder", "price": 45, "quantity": "100g packet",  "image": "assets/images/akashneelpowder.jpg" },
-
-
-  { "name": "Patanjali Super Dishwasher Bar (Bartan Sabun)", "price": 10, "quantity": "1 packet",  "image": "assets/images/patanajalidishwashsoap.jpg" },
-  { "name": "Steel Wool (Dish Scrubber)", "price": 10, "quantity": "1 packet",  "image": "assets/images/scrub.jpg" },
-
-  { "name": "Lux Soap", "price": 10, "quantity": "1 unit",  "image": "assets/images/luxsoap.jpg" },
-  { "name": "No.1 Soap", "price": 10, "quantity": "1 unit",  "image": "assets/images/no1soap.jpg" },
-  { "name": "Life Boy Soap", "price": 10, "quantity": "1 unit",  "image": "assets/images/lifeboy.jpg" },
-  { "name": "Dettol soap", "price": 80, "quantity": "1 unit",  "image": "assets/images/dettolsoap.jpg" },
-  { "name": "Dettol Handwash", "price": 10, "quantity": "1 unit",  "image": "assets/images/dettolhandwash.jpg" },
-
-  { "name": "Clinic Plus Shampoo", "price": 1, "quantity": "1 packet",  "image": "assets/images/clinicplusshampoo.jpg" },
-  { "name": "Vatika Shampoo", "price": 1, "quantity": "1 packet",  "image": "assets/images/vatikashampoo.jpg" },
-  { "name": "Sunsilk Shampoo", "price": 1, "quantity": "1 packet",  "image": "assets/images/sunsilkshampoo.jpg" },
-  { "name": "Head & Shoulders Shampoo", "price": 1, "quantity": "1 packet",  "image": "assets/images/head&shouldersshampoo.jpg" },
-
-  { "name": "Nihar Shanti Amla Hair Oil", "price": 10, "quantity": "1 bottle",  "image": "assets/images/niharshantiamlahairoil.jpg" },
-
-  { "name": "Zed Black Premium Incense stick (Agarbatti)", "price": 10, "quantity": "1 packet",  "image": "assets/images/zedblackpremium.jpg" },
-  { "name": "Zed Black Luxury Incense stick (Agarbatti)", "price": 10, "quantity": "1 packet",  "image": "assets/images/zedblackluxury.jpg" },
-  { "name": "Zed Black Premium Incense stick (Agarbatti)", "price": 20, "quantity": "1 packet",  "image": "assets/images/zedblackpremium.jpg" },
-  { "name": "Pooja Bell Incense stick (Agarbatti)", "price": 10, "quantity": "1 packet",  "image": "assets/images/poojabell.jpg" },
-  { "name": "Mahabir Deluxe Dhoop", "price": 10, "quantity": "1 packet",  "image": "assets/images/mahabirdeluxedhoop.jpg" },
-
-
-  { "name": "Matchbox (Match Sticks)", "price": 10, "quantity": "1 packet",  "image": "assets/images/matchbox.jpg" },
-
-  { "name": "Harpic (Small)", "price": 46, "quantity": "1 bottle",  "image": "assets/images/harpic.jpg" },
-  { "name": "Harpic (Big)", "price": 139, "quantity": "1 bottle",  "image": "assets/images/harpic.jpg" },
-
-  { "name": "Colgate Toothpaste", "price": 10, "quantity": "1 tube",  "image": "assets/images/colgate.png" },
-  { "name": "Colgate Toothpaste", "price": 20, "quantity": "1 tube",  "image": "assets/images/colgate.png" },
-  { "name": "Colgate Toothpaste", "price": 55, "quantity": "1 tube",  "image": "assets/images/colgate.png" },
-
-  { "name": "Pepsodent Toothpaste", "price": 10, "quantity": "1 tube",  "image": "assets/images/pepsodent.jpg" },
-  { "name": "Pepsodent Toothpaste", "price": 20, "quantity": "1 tube",  "image": "assets/images/pepsodent.jpg" },
-  { "name": "Pepsodent Toothpaste", "price": 20, "quantity": "1 tube",  "image": "assets/images/pepsodent.jpg" },
-
-  { "name": "Dabur Red Toothpaste", "price": 10, "quantity": "1 tube",  "image": "assets/images/dabur.png" },
-  { "name": "Dabur Red Toothpaste", "price": 20, "quantity": "1 tube",  "image": "assets/images/dabur.png" },
-  { "name": "Dabur Red Toothpaste", "price": 55, "quantity": "1 tube",  "image": "assets/images/dabur.png" },
-  { "name": "Dabur Red Toothpaste", "price": 70, "quantity": "1 tube",  "image": "assets/images/dabur.png" },
-  { "name": "Dabur Red Toothpaste", "price": 130, "quantity": "1 tube",  "image": "assets/images/dabur.png" },
-
-  { "name": "Closeup Toothpaste", "price": 10, "quantity": "1 tube",  "image": "assets/images/closeup.png" },
-  { "name": "Closeup Toothpaste", "price": 20, "quantity": "1 tube",  "image": "assets/images/closeup.png" },
-  { "name": "Closeup Toothpaste", "price": 55, "quantity": "1 tube",  "image": "assets/images/closeup.png" },
-
-  { "name": "Colgate Cibaca Toothbrush", "price": 20, "quantity": "1 unit",  "image": "assets/images/colgatetoothbrush.jpg" }
+  {
+    "name": "Sugar",
+    "image": "assets/images/sugar.png",
+    "options": [
+       { "label": "50 g", "price": 2.35 },
+       { "label": "100 g", "price": 4.70 },
+       { "label": "150 g", "price": 7.05 },
+       { "label": "200 g", "price": 9.40 },
+       { "label": "250 g", "price": 11.75 },
+       { "label": "500 g", "price": 23.50 },
+       { "label": "750 g", "price": 35.25 },
+       { "label": "1 kg", "price": 46.00 },
+       { "label": "2 kg", "price": 94.00 },
+       { "label": "5 kg", "price": 235.00 },
+       { "label": "10 kg", "price": 470.00 },
+       { "label": "15 kg", "price": 705.00 },
+       { "label": "20 kg", "price": 940.00 },
+       { "label": "50 kg", "price": 2350.00 }
+    ]
+  },
+  {
+    "name": "Tata Tea Agni",
+    "image": "assets/images/tataagnitea.webp",
+    "options": [
+      { "label": "1 packet", "price": 50 }
+    ]
+  },
+  {
+    "name": "Tata Tea Agni (Elaichi)",
+    "image": "assets/images/agniteagreen.jpg",
+    "options": [
+      { "label": "1 packet", "price": 80 }
+    ]
+  },
+  {
+    "name": "Nescafe Coffee",
+    "image": "assets/images/nescafecoffee.jpg",
+    "options": [
+      { "label": "1 packet", "price": 2 }
+    ]
+  },
+  {
+    "name": "Vishnu Mustard Oil",
+    "image": "assets/images/vishnumustardoil.jpeg",
+    "options": [
+      { "label": "1/2 L", "price": 80 },
+      { "label": "1 L", "price": 160 }
+    ]
+  },
+  {
+    "name": "Refined Oil bottle",
+    "image": "assets/images/viborrefinedoil.jpeg",
+    "options": [
+      { "label": "1/2 L", "price": 80 }
+    ]
+  },
+  {
+    "name": "Refined Oil packet",
+    "image": "assets/images/viborrefinedoilpacket.jpg",
+    "options": [
+      { "label": "1 L", "price": 160 }
+    ]
+  },
+  {
+    "name": "Gagan Vanaspati Ghee",
+    "image": "assets/images/gaganvanaspatighee.webp",
+    "options": [
+      { "label": "1/2 kg", "price": 80 },
+      { "label": "1 kg", "price": 160 }
+    ]
+  },
+  {
+    "name": "Tata Salt",
+    "image": "assets/images/tatasalt.jpg",
+    "options": [
+      { "label": "1 packet", "price": 30 }
+    ]
+  },
+  {
+    "name": "Red chili powder (Degi Mirch)",
+    "image": "assets/images/vishalchillipowder.jpeg",
+    "options": [
+      { "label": "1 packet", "price": 10 }
+    ]
+  },
+  {
+    "name": "Red chili powder",
+    "image": "assets/images/redchillipowderpacket.jpg",
+    "options": [
+      { "label": "100g packet", "price": 50 }
+    ]
+  },
+  {
+    "name": "Sidhant Garam Masala",
+    "image": "assets/images/sidhantgarammasala.jpg",
+    "options": [
+      { "label": "50g packet", "price": 40 },
+      { "label": "100g packet", "price": 80 }
+    ]
+  },
+  {
+    "name": "Sidhant Turmeric Powder (Haldi)",
+    "image": "assets/images/sidhantturmeric.jpg",
+    "options": [
+      { "label": "50g packet", "price": 20 },
+      { "label": "100g packet", "price": 40 },
+      { "label": "200g packet", "price": 80 }
+    ]
+  },
+  {
+    "name": "Saroya Turmeric Powder  (Haldi)",
+    "image": "assets/images/saroyaturmericpacket.jpg",
+    "options": [
+      { "label": "1 packet", "price": 10 }
+    ]
+  },
+  {
+    "name": "Carom Seeds(Ajwain)",
+    "image": "assets/images/caromseedsajwain.jpg",
+    "options": [
+      { "label": "1 packet", "price": 40 }
+    ]
+  },
+  {
+    "name": "Saunf (Fennel)",
+    "image": "assets/images/saunf.jpg",
+    "options": [
+      { "label": "1 packet", "price": 40 }
+    ]
+  },
+  {
+    "name": "Tamarind (Imli)",
+    "image": "assets/images/tamarind.jpg",
+    "options": [
+      { "label": "1 packet", "price": 25 }
+    ]
+  },
+  {
+    "name": "Vishal Jeera (Cumin Seeds)",
+    "image": "assets/images/vishaljeerapacket.jpg",
+    "options": [
+      { "label": "100g packet", "price": 40 }
+    ]
+  },
+  {
+    "name": "1121 Basmati Rice",
+    "image": "assets/images/1121basmatirice.jpg",
+    "options": [
+    { "label": "50 g", "price": 5.00 },
+    { "label": "100 g", "price": 10.00 },
+    { "label": "150 g", "price": 15.00 },
+    { "label": "200 g", "price": 20.00 },
+    { "label": "250 g", "price": 25.00 },
+    { "label": "500 g", "price": 50.00 },
+    { "label": "750 g", "price": 75.00 },
+    { "label": "1 kg", "price": 100.00 },
+    { "label": "2 kg", "price": 200.00 },
+    { "label": "5 kg", "price": 500.00 },
+    { "label": "10 kg", "price": 1000.00 },
+    { "label": "15 kg", "price": 1500.00 },
+    { "label": "20 kg", "price": 2000.00 },
+    { "label": "50 kg", "price": 5000.00 }
+    ]
+  },
+  {
+    "name": "Basmati Rice Tota (Kaniya)",
+    "image": "assets/images/basmatitotarice.jpg",
+    "options": [
+    { "label": "50 g", "price": 2.00 },
+    { "label": "100 g", "price": 4.00 },
+    { "label": "150 g", "price": 6.00 },
+    { "label": "200 g", "price": 8.00 },
+    { "label": "250 g", "price": 10.00 },
+    { "label": "500 g", "price": 20.00 },
+    { "label": "750 g", "price": 30.00 },
+    { "label": "1 kg", "price": 40.00 },
+    { "label": "2 kg", "price": 80.00 },
+    { "label": "5 kg", "price": 200.00 },
+    { "label": "10 kg", "price": 400.00 },
+    { "label": "15 kg", "price": 600.00 },
+    { "label": "20 kg", "price": 800.00 },
+    { "label": "50 kg", "price": 2000.00 }
+    ]
+  },
+  {
+    "name": "Moong Dal Sabut (Sabut Moongi)",
+    "image": "assets/images/moongdalsabut.jpg",
+    "options": [
+       { "label": "50 g", "price": 2.35 },
+       { "label": "100 g", "price": 4.70 },
+       { "label": "150 g", "price": 7.05 },
+       { "label": "200 g", "price": 9.40 },
+       { "label": "250 g", "price": 11.75 },
+       { "label": "500 g", "price": 23.50 },
+       { "label": "750 g", "price": 35.25 },
+       { "label": "1 kg", "price": 120.00 },
+       { "label": "2 kg", "price": 94.00 },
+       { "label": "5 kg", "price": 235.00 },
+       { "label": "10 kg", "price": 470.00 },
+       { "label": "15 kg", "price": 705.00 },
+       { "label": "20 kg", "price": 940.00 },
+       { "label": "50 kg", "price": 2350.00 }
+    ]
+  },
+  {
+    "name": "Masoor Dal Sabut (Sabut Masoor)",
+    "image": "assets/images/masoordalsabut.jpg",
+    "options": [
+     { "label": "50 g", "price": 6.00 },
+     { "label": "100 g", "price": 12.00 },
+     { "label": "150 g", "price": 18.00 },
+     { "label": "200 g", "price": 24.00 },
+     { "label": "250 g", "price": 30.00 },
+     { "label": "500 g", "price": 60.00 },
+     { "label": "750 g", "price": 90.00 },
+     { "label": "1 kg", "price": 120.00 },
+     { "label": "2 kg", "price": 240.00 },
+     { "label": "5 kg", "price": 600.00 },
+     { "label": "10 kg", "price": 1200.00 },
+     { "label": "15 kg", "price": 1800.00 },
+     { "label": "20 kg", "price": 2400.00 },
+     { "label": "50 kg", "price": 6000.00 }
+   ]
+  },
+  {
+    "name": "Moong Dal (Moongi)",
+    "image": "assets/images/moongidal.jpg",
+    "options": [
+     { "label": "50 g", "price": 6.00 },
+     { "label": "100 g", "price": 12.00 },
+     { "label": "150 g", "price": 18.00 },
+     { "label": "200 g", "price": 24.00 },
+     { "label": "250 g", "price": 30.00 },
+     { "label": "500 g", "price": 60.00 },
+     { "label": "750 g", "price": 90.00 },
+     { "label": "1 kg", "price": 120.00 },
+     { "label": "2 kg", "price": 240.00 },
+     { "label": "5 kg", "price": 600.00 },
+     { "label": "10 kg", "price": 1200.00 },
+     { "label": "15 kg", "price": 1800.00 },
+     { "label": "20 kg", "price": 2400.00 },
+     { "label": "50 kg", "price": 6000.00 }
+   ]
+  },
+  {
+    "name": "Masoor Dal (Dale Masoor)",
+    "image": "assets/images/masoordal.jpg",
+    "options": [
+     { "label": "50 g", "price": 6.00 },
+     { "label": "100 g", "price": 12.00 },
+     { "label": "150 g", "price": 18.00 },
+     { "label": "200 g", "price": 24.00 },
+     { "label": "250 g", "price": 30.00 },
+     { "label": "500 g", "price": 60.00 },
+     { "label": "750 g", "price": 90.00 },
+     { "label": "1 kg", "price": 120.00 },
+     { "label": "2 kg", "price": 240.00 },
+     { "label": "5 kg", "price": 600.00 },
+     { "label": "10 kg", "price": 1200.00 },
+     { "label": "15 kg", "price": 1800.00 },
+     { "label": "20 kg", "price": 2400.00 },
+     { "label": "50 kg", "price": 6000.00 }
+   ]
+  },
+  {
+    "name": "Chana Dal",
+    "image": "assets/images/chanadal.jpg",
+    "options": [
+    { "label": "50 g", "price": 5.00 },
+    { "label": "100 g", "price": 10.00 },
+    { "label": "150 g", "price": 15.00 },
+    { "label": "200 g", "price": 20.00 },
+    { "label": "250 g", "price": 25.00 },
+    { "label": "500 g", "price": 50.00 },
+    { "label": "750 g", "price": 75.00 },
+    { "label": "1 kg", "price": 100.00 },
+    { "label": "2 kg", "price": 200.00 },
+    { "label": "5 kg", "price": 500.00 },
+    { "label": "10 kg", "price": 1000.00 },
+    { "label": "15 kg", "price": 1500.00 },
+    { "label": "20 kg", "price": 2000.00 },
+    { "label": "50 kg", "price": 5000.00 }
+    ]
+  },
+  {
+    "name": "Kala Chana",
+    "image": "assets/images/kalachana.jpg",
+    "options": [ 
+	   { "label": "50 g", "price": 5.00 },
+     { "label": "100 g", "price": 10.00 },
+     { "label": "150 g", "price": 15.00 },
+     { "label": "200 g", "price": 20.00 },
+     { "label": "250 g", "price": 25.00 },
+     { "label": "500 g", "price": 50.00 },
+     { "label": "750 g", "price": 75.00 },
+     { "label": "1 kg", "price": 100.00 },
+     { "label": "2 kg", "price": 200.00 },
+     { "label": "5 kg", "price": 500.00 },
+     { "label": "10 kg", "price": 1000.00 },
+     { "label": "15 kg", "price": 1500.00 },
+     { "label": "20 kg", "price": 2000.00 },
+     { "label": "50 kg", "price": 5000.00 }
+    ]
+  },
+  {
+    "name": "White Chana",
+    "image": "assets/images/whitechana.jpg",
+    "options": [
+     { "label": "50 g", "price": 6.00 },
+     { "label": "100 g", "price": 12.00 },
+     { "label": "150 g", "price": 18.00 },
+     { "label": "200 g", "price": 24.00 },
+     { "label": "250 g", "price": 30.00 },
+     { "label": "500 g", "price": 60.00 },
+     { "label": "750 g", "price": 90.00 },
+     { "label": "1 kg", "price": 120.00 },
+     { "label": "2 kg", "price": 240.00 },
+     { "label": "5 kg", "price": 600.00 },
+     { "label": "10 kg", "price": 1200.00 },
+     { "label": "15 kg", "price": 1800.00 },
+     { "label": "20 kg", "price": 2400.00 },
+     { "label": "50 kg", "price": 6000.00 }
+   ]
+  },
+  {
+    "name": "Kesari Nirol Soap (Desi Sabun)",
+    "image": "assets/images/kesarinirol.jpg",
+    "options": [
+      { "label": "1 packet - 3 pcs", "price": 30 }
+    ]
+  },
+  {
+    "name": "Surf Excel Easy Detergent",
+    "image": "assets/images/surfexceldetergent.jpg",
+    "options": [
+      { "label": "500g packet", "price": 68 },
+      { "label": "1kg packet", "price": 138 }
+    ]
+  },
+  {
+    "name": "Zigma Detergent",
+    "image": "assets/images/zigma.jpg",
+    "options": [
+      { "label": "125g packet", "price": 10 },
+      { "label": "250g packet", "price": 20 },
+      { "label": "1kg packet", "price": 70 }
+    ]
+  },
+  {
+    "name": "Ghadi Detergent",
+    "image": "assets/images/ghadi.jpg",
+    "options": [
+      { "label": "1 packet", "price": 10 }
+    ]
+  },
+  {
+    "name": "Akash Neel Powder",
+    "image": "assets/images/akashneelpowder.jpg",
+    "options": [
+      { "label": "100g packet", "price": 45 }
+    ]
+  },
+  {
+    "name": "Patanjali Super Dishwasher Bar (Bartan Sabun)",
+    "image": "assets/images/patanajalidishwashsoap.jpg",
+    "options": [
+      { "label": "1 packet", "price": 10 }
+    ]
+  },
+  {
+    "name": "Steel Wool (Dish Scrubber)",
+    "image": "assets/images/scrub.jpg",
+    "options": [
+      { "label": "1 packet", "price": 10 }
+    ]
+  },
+  {
+    "name": "Lux Soap",
+    "image": "assets/images/luxsoap.jpg",
+    "options": [
+      { "label": "1 unit", "price": 10 },
+      { "label": "1 unit", "price": 25 },
+      { "label": "1 unit", "price": 30 }
+    ]
+  },
+  {
+    "name": "No.1 Soap",
+    "image": "assets/images/no1soap.jpg",
+    "options": [
+      { "label": "1 unit", "price": 10 }
+    ]
+  },
+  {
+    "name": "Life Boy Soap",
+    "image": "assets/images/lifeboy.jpg",
+    "options": [
+      { "label": "1 unit", "price": 20 }
+    ]
+  },
+  {
+    "name": "Dettol soap",
+    "image": "assets/images/dettolsoap.jpg",
+    "options": [
+      { "label": "1 unit", "price": 10 }
+    ]
+  },
+  {
+    "name": "Dettol Handwash",
+    "image": "assets/images/dettolhandwash.jpg",
+    "options": [
+      { "label": "1 unit", "price": 10 }
+    ]
+  },
+  {
+    "name": "Clinic Plus Shampoo",
+    "image": "assets/images/clinicplusshampoo.jpg",
+    "options": [
+      { "label": "1 packet", "price": 1 }
+    ]
+  },
+  {
+    "name": "Vatika Shampoo",
+    "image": "assets/images/vatikashampoo.jpg",
+    "options": [
+      { "label": "1 packet", "price": 1 }
+    ]
+  },
+  {
+    "name": "Sunsilk Shampoo",
+    "image": "assets/images/sunsilkshampoo.jpg",
+    "options": [
+      { "label": "1 packet", "price": 1 }
+    ]
+  },
+  {
+    "name": "Head & Shoulders Shampoo",
+    "image": "assets/images/head&shouldersshampoo.jpg",
+    "options": [
+      { "label": "1 packet", "price": 2 }
+    ]
+  },
+  {
+    "name": "Nihar Shanti Amla Hair Oil",
+    "image": "assets/images/niharshantiamlahairoil.jpg",
+    "options": [
+      { "label": "1 bottle", "price": 10 },
+      { "label": "1 bottle", "price": 20 }
+    ]
+  },
+  {
+    "name": "Zed Black Premium Incense stick (Agarbatti)",
+    "image": "assets/images/zedblackpremium.jpg",
+    "options": [
+      { "label": "1 packet", "price": 10 },
+      { "label": "1 packet", "price": 20 }
+    ]
+  },
+  {
+    "name": "Zed Black Luxury Incense stick (Agarbatti)",
+    "image": "assets/images/zedblackluxury.jpg",
+    "options": [
+      { "label": "1 packet", "price": 10 }
+    ]
+  },
+  {
+    "name": "Pooja Bell Incense stick (Agarbatti)",
+    "image": "assets/images/poojabell.jpg",
+    "options": [
+      { "label": "1 packet", "price": 10 }
+    ]
+  },
+  {
+    "name": "Mahabir Deluxe Dhoop",
+    "image": "assets/images/mahabirdeluxedhoop.jpg",
+    "options": [
+      { "label": "1 packet", "price": 10 }
+    ]
+  },
+  {
+    "name": "Matchbox (Match Sticks)",
+    "image": "assets/images/matchbox.jpg",
+    "options": [
+      { "label": "1 packet", "price": 10 }
+    ]
+  },
+  {
+    "name": "Harpic",
+    "image": "assets/images/harpic.jpg",
+    "options": [
+      { "label": "Small", "price": 46 },
+      { "label": "Big", "price": 139 }
+    ]
+  },
+  {
+    "name": "Colgate Toothpaste",
+    "image": "assets/images/colgate.png",
+    "options": [
+      { "label": "Small", "price": 10 },
+      { "label": "Medium", "price": 20 },
+      { "label": "Large", "price": 80 }
+    ]
+  },
+  {
+    "name": "Pepsodent Toothpaste",
+    "image": "assets/images/pepsodent.jpg",
+    "options": [
+      { "label": "Medium", "price": 20 },
+      { "label": "Large", "price": 65 }
+    ]
+  },
+  {
+    "name": "Dabur Red Toothpaste",
+    "image": "assets/images/dabur.png",
+    "options": [
+      { "label": "Small", "price": 10 },
+      { "label": "Medium", "price": 20 },
+      { "label": "XL", "price": 70 },
+      { "label": "Family Pack", "price": 155 }
+    ]
+  },
+  {
+    "name": "Closeup Toothpaste",
+    "image": "assets/images/closeup.png",
+    "options": [
+      { "label": "Small", "price": 10 },
+      { "label": "Small", "price": 20 },
+      { "label": "Medium", "price": 55 },
+      { "label": "Large", "price": 130 }
+    ]
+  },
+  {
+    "name": "Colgate Cibaca Toothbrush",
+    "image": "assets/images/colgatetoothbrush.jpg",
+    "options": [
+      { "label": "1 unit", "price": 20 }
+    ]
+  }
 ]

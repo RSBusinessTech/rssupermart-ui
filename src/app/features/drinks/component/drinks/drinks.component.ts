@@ -26,6 +26,7 @@ searchTerm: string = '';
   ) {}
 
   ngOnInit(): void {
+   window.scrollTo({ top: 0, behavior: 'smooth' });
    this.productService.getDrinksProducts()
     .subscribe(products => {
       this.drinksProducts = products;
