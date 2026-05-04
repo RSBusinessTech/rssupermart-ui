@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 import { ProductsService } from 'src/app/services/product.service';
 import jsPDF from 'jspdf';
@@ -16,40 +16,63 @@ export class GroceryComponent implements OnInit {
   totalPrice: number = 0;
   isCartOpen: boolean = false;
 
+  currentPage: number = 1;
+  itemsPerPage: number = 20;
+
   constructor(
     private productService: ProductsService,
     private cartService: CartService
   ) {}
 
   ngOnInit(): void {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    this.productService.getGroceryProducts()
-      .subscribe((products: any[]) => {
+    this.setItemsPerPage();
 
-        this.groceryProducts = products.map(product => {
+    this.productService.getGroceryProducts().subscribe((products: any[]) => {
 
-          // ✅ sort options (handles g, kg, L)
-          product.options.sort((a: any, b: any) => {
-            const getValue = (str: string) => {
-              const num = parseFloat(str);
-              if (str.includes('kg') || str.includes('L')) return num * 1000;
-              return num;
-            };
-            return getValue(a.label) - getValue(b.label);
-          });
+      this.groceryProducts = products.map(product => {
 
-          // ✅ default selected option
-          product.selectedOption = product.options[0];
+        product.options = product.options || [];
 
-          return product;
+        product.options.sort((a: any, b: any) => {
+          const getValue = (str: string) => {
+            const num = parseFloat(str);
+            if (str.includes('kg') || str.includes('L')) return num * 1000;
+            return num;
+          };
+          return getValue(a.label) - getValue(b.label);
         });
 
+        product.selectedOption = product.options[0];
+        return product;
       });
+
+    });
 
     this.syncCart();
   }
 
-  // 🔍 Search filter
+  @HostListener('window:resize')
+  onResize() {
+    const old = this.itemsPerPage;
+    this.setItemsPerPage();
+    if (old !== this.itemsPerPage) {
+      this.currentPage = 1;
+    }
+  }
+
+  setItemsPerPage() {
+    const width = window.innerWidth;
+
+    if (width <= 768) this.itemsPerPage = 10;
+    else if (width <= 992) this.itemsPerPage = 16;
+    else this.itemsPerPage = 20;
+  }
+
+  onSearchChange() {
+    this.currentPage = 1;
+  }
+
+  // ================= FILTER =================
   get filteredProducts() {
     if (!this.searchTerm.trim()) return this.groceryProducts;
 
@@ -59,53 +82,94 @@ export class GroceryComponent implements OnInit {
     );
   }
 
-  // 🛒 Toggle cart
+  // ================= PAGINATION PRODUCTS =================
+  get pagedProducts() {
+    const start = (this.currentPage - 1) * this.itemsPerPage;
+    return this.filteredProducts.slice(start, start + this.itemsPerPage);
+  }
+
+  get totalPages(): number {
+    return Math.ceil(this.filteredProducts.length / this.itemsPerPage) || 1;
+  }
+
+  // ================= PAGINATION UI =================
+  get paginationPages(): (number | string)[] {
+    const total = this.totalPages;
+
+    if (total <= 4) {
+      return Array.from({ length: total }, (_, i) => i + 1);
+    }
+
+    return [1, 2, 3, '...', total];
+  }
+
+  goToPage(page: number | string) {
+    if (page === '...') return;
+
+    this.currentPage = Number(page);
+
+    const el = document.querySelector('.products');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  nextPage() {
+    if (this.currentPage < this.totalPages) {
+      this.goToPage(this.currentPage + 1);
+    }
+  }
+
+  prevPage() {
+    if (this.currentPage > 1) {
+      this.goToPage(this.currentPage - 1);
+    }
+  }
+
+  goToFirst() {
+    this.goToPage(1);
+  }
+
+  goToLast() {
+    this.goToPage(this.totalPages);
+  }
+
+  // ================= CART =================
   toggleCart() {
     this.isCartOpen = !this.isCartOpen;
   }
 
-  // ➕ Add item
   increaseQty(product: any) {
     this.cartService.addToCart({
       name: product.name,
       price: product.selectedOption.price,
       quantity: product.selectedOption.label
     });
-
     this.syncCart();
   }
 
-  // ➖ Remove item
   decreaseQty(product: any) {
     this.cartService.decreaseQty({
       name: product.name,
       quantity: product.selectedOption.label
     });
-
     this.syncCart();
   }
 
-  // 🔢 Get quantity for UI
   getQty(product: any): number {
     const item = this.cartItems.find(p =>
       p.name === product.name &&
       p.quantity === product.selectedOption.label
     );
-
     return item ? item.qty : 0;
   }
 
-  // 🔄 Sync cart + total
   private syncCart() {
     this.cartItems = this.cartService.getCart();
-
     this.totalPrice = this.cartItems.reduce(
-      (sum, item) => sum + (item.price * item.qty),
-      0
+      (sum, item) => sum + (item.price * item.qty), 0
     );
   }
 
-  // 📲 WhatsApp Order
+  // ================= WHATSAPP =================
   sendCartToWhatsApp() {
     const phoneNumber = "918284948635";
 
@@ -132,7 +196,7 @@ export class GroceryComponent implements OnInit {
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
   }
 
-  // 📄 Download PDF
+  // ================= PDF =================
   downloadPDF() {
     const doc = new jsPDF();
 

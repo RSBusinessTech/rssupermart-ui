@@ -628,45 +628,45 @@
     "name": "Harpic",
     "image": "assets/images/harpic.jpg",
     "options": [
-      { "label": "Small", "price": 46 },
-      { "label": "Big", "price": 139 }
+      { "label": "Small (S)", "price": 46 },
+      { "label": "Large (L)", "price": 139 }
     ]
   },
   {
     "name": "Colgate Toothpaste",
     "image": "assets/images/colgate.png",
     "options": [
-      { "label": "Small", "price": 10 },
-      { "label": "Medium", "price": 20 },
-      { "label": "Large", "price": 80 }
+      { "label": "Small (S)", "price": 10 },
+      { "label": "Medium (M)", "price": 20 },
+      { "label": "Large (L)", "price": 80 }
     ]
   },
   {
     "name": "Pepsodent Toothpaste",
     "image": "assets/images/pepsodent.jpg",
     "options": [
-      { "label": "Medium", "price": 20 },
-      { "label": "Large", "price": 65 }
+      { "label": "Medium (M)", "price": 20 },
+      { "label": "Large (L)", "price": 65 }
     ]
   },
   {
     "name": "Dabur Red Toothpaste",
     "image": "assets/images/dabur.png",
     "options": [
-      { "label": "Small", "price": 10 },
-      { "label": "Medium", "price": 20 },
-      { "label": "XL", "price": 70 },
-      { "label": "Family Pack", "price": 155 }
+      { "label": "Small (S)", "price": 10 },
+      { "label": "Medium (M)", "price": 20 },
+      { "label": "Large (L)", "price": 70 },
+      { "label": "Extra Large (XL)", "price": 155 }
     ]
   },
   {
     "name": "Closeup Toothpaste",
     "image": "assets/images/closeup.png",
     "options": [
-      { "label": "Small", "price": 10 },
-      { "label": "Small", "price": 20 },
-      { "label": "Medium", "price": 55 },
-      { "label": "Large", "price": 130 }
+      { "label": "Small (S)", "price": 10 },
+      { "label": "Medium (M)", "price": 20 },
+      { "label": "Large (L)", "price": 55 },
+      { "label": "Extra Large (XL)", "price": 130 }
     ]
   },
   {

@@ -3,27 +3,59 @@
   <input
     type="text"
     [(ngModel)]="searchTerm"
+    (ngModelChange)="onSearchChange()"
     placeholder="Search Grocery..."
     class="search-bar"
   />
 </section>
 
-<!-- ================= PRODUCTS ================= -->
 <section class="products">
   <h2>Grocery</h2>
 
-  <div class="product-grid">
-    <div class="product-card" *ngFor="let product of filteredProducts">
+  <!-- TOP PAGINATION -->
+  <div class="pagination" *ngIf="totalPages > 1">
 
-      <!-- Image -->
+    <button (click)="goToFirst()" [disabled]="currentPage === 1">
+      ⏮ First
+    </button>
+
+    <button (click)="prevPage()" [disabled]="currentPage === 1">
+      ⬅ Prev
+    </button>
+
+    <ng-container *ngFor="let page of paginationPages">
+
+      <button
+        *ngIf="page !== '...'; else dots"
+        (click)="goToPage(page)"
+        [class.active]="currentPage === page">
+        {{ page }}
+      </button>
+
+      <ng-template #dots>
+        <span class="dots">...</span>
+      </ng-template>
+
+    </ng-container>
+
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+      Next ➡
+    </button>
+
+    <button (click)="goToLast()" [disabled]="currentPage === totalPages">
+      Last ⏭
+    </button>
+
+  </div>
+
+  <!-- PRODUCTS -->
+  <div class="product-grid">
+    <div class="product-card" *ngFor="let product of pagedProducts">
+
       <img [src]="product.image" [alt]="product.name" />
 
-      <!-- Name -->
       <h3>{{ product.name }}</h3>
 
-      <!-- ================= SMART QUANTITY UI ================= -->
-
-      <!-- MULTIPLE OPTIONS → DROPDOWN -->
       <div *ngIf="product.options.length > 1">
         <select [(ngModel)]="product.selectedOption" class="qty-dropdown">
           <option *ngFor="let opt of product.options" [ngValue]="opt">
@@ -32,59 +64,78 @@
         </select>
       </div>
 
-      <!-- SINGLE OPTION → YOUR ORIGINAL LABEL -->
       <div *ngIf="product.options.length === 1" class="qty-label">
         {{ product.options[0].label }}
       </div>
 
-      <!-- ================= PRICE + QTY ================= -->
       <div class="card-footer">
-        
-        <!-- Dynamic Price -->
-        <p class="price">
-          Rs. {{ product.selectedOption?.price }}
-        </p>
+        <p class="price">Rs. {{ product.selectedOption?.price }}</p>
 
-        <!-- Quantity Buttons -->
         <div class="qty-box">
           <button (click)="decreaseQty(product)">−</button>
           <span>{{ getQty(product) }}</span>
           <button (click)="increaseQty(product)">+</button>
         </div>
-
       </div>
 
     </div>
+  </div>
+
+  <!-- BOTTOM PAGINATION -->
+  <div class="pagination" *ngIf="totalPages > 1">
+
+    <button (click)="goToFirst()" [disabled]="currentPage === 1">
+      ⏮ First
+    </button>
+
+    <button (click)="prevPage()" [disabled]="currentPage === 1">
+      ⬅ Prev
+    </button>
+
+    <ng-container *ngFor="let page of paginationPages">
+
+      <button
+        *ngIf="page !== '...'; else dots2"
+        (click)="goToPage(page)"
+        [class.active]="currentPage === page">
+        {{ page }}
+      </button>
+
+      <ng-template #dots2>
+        <span class="dots">...</span>
+      </ng-template>
+
+    </ng-container>
+
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+      Next ➡
+    </button>
+
+    <button (click)="goToLast()" [disabled]="currentPage === totalPages">
+      Last ⏭
+    </button>
+
   </div>
 </section>
 
 <!-- ================= CART ================= -->
 <div class="cart-preview" *ngIf="cartItems.length > 0">
-  
-  <!-- Header -->
+
   <div class="cart-header" (click)="toggleCart()">
-    <h3>
-      🛒 Cart
-      <span>{{ isCartOpen ? '▼' : '▲' }}</span>
-    </h3>
+    <h3>🛒 Cart <span>{{ isCartOpen ? '▼' : '▲' }}</span></h3>
   </div>
 
-  <!-- Items -->
   <div class="cart-items" *ngIf="isCartOpen">
     <div *ngFor="let item of cartItems" class="cart-item">
-      <span>
-        {{ item.name }} ({{ item.quantity }}) x{{ item.qty }}
-      </span>
+      <span>{{ item.name }} ({{ item.quantity }}) x{{ item.qty }}</span>
       <span>Rs. {{ item.price * item.qty }}</span>
     </div>
   </div>
 
-  <!-- PDF Button -->
   <button (click)="downloadPDF()" class="pdf-btn">
     Download Bill
   </button>
 
-  <!-- Bottom -->
   <div class="cart-bottom">
     <div class="cart-info">
       🛒 {{ cartItems.length }} items | Rs. {{ totalPrice }}
