@@ -285,7 +285,7 @@
   },
   {
     "name": "Sabut Maah Dal (Sabut Maah)",
-    "image": "assets/images/sabutmah.jpg",
+    "image": "assets/images/sabutmaah.jpg",
     "options": [
     { "label": "50 g", "price": 5.00 },
     { "label": "100 g", "price": 10.00 },
