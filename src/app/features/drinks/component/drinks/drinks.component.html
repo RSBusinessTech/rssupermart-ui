@@ -1,4 +1,4 @@
-<!-- Search bar -->
+<!-- ================= SEARCH ================= -->
 <section class="search-section">
   <input
     type="text"
@@ -8,17 +8,38 @@
   />
 </section>
 
-<!-- Products -->
+<!-- ================= PRODUCTS ================= -->
 <section class="products">
   <h2>Drinks</h2>
 
   <div class="product-grid">
     <div class="product-card" *ngFor="let product of filteredProducts">
+
+      <!-- Image -->
       <img [src]="product.image" [alt]="product.name" />
+
+      <!-- Name -->
       <h3>{{ product.name }}</h3>
 
+      <!-- Dropdown if multiple options -->
+      <div *ngIf="product.options.length > 1">
+        <select [(ngModel)]="product.selectedOption" class="qty-dropdown">
+          <option *ngFor="let opt of product.options" [ngValue]="opt">
+            {{ opt.label }} - Rs. {{ opt.price }}
+          </option>
+        </select>
+      </div>
+
+      <!-- Single option -->
+      <div *ngIf="product.options.length === 1" class="qty-label">
+        {{ product.options[0].label }}
+      </div>
+
+      <!-- Footer -->
       <div class="card-footer">
-        <p class="price">Rs. {{ product.price }}</p>
+        <p class="price">
+          Rs. {{ product.selectedOption?.price }}
+        </p>
 
         <div class="qty-box">
           <button (click)="decreaseQty(product)">−</button>
@@ -26,14 +47,53 @@
           <button (click)="increaseQty(product)">+</button>
         </div>
       </div>
+
     </div>
   </div>
 
 </section>
 
-<!-- Cart -->
+  <!-- ================= PAGINATION ================= -->
+  <div class="pagination" *ngIf="totalPages > 1">
+
+    <!-- PREVIOUS -->
+    <button
+      (click)="prevPage()"
+      [disabled]="currentPage === 1"
+    >
+      ‹ Previous
+    </button>
+
+    <!-- PAGE NUMBERS -->
+    <ng-container *ngFor="let page of paginationPages">
+
+      <button
+        *ngIf="page !== '...'; else dots"
+        (click)="goToPage(page)"
+        [class.active]="currentPage === page"
+      >
+        {{ page }}
+      </button>
+
+      <ng-template #dots>
+        <span class="dots">...</span>
+      </ng-template>
+
+    </ng-container>
+
+    <!-- NEXT -->
+    <button
+      (click)="nextPage()"
+      [disabled]="currentPage === totalPages"
+    >
+      Next ›
+    </button>
+
+  </div>
+
+<!-- ================= CART ================= -->
 <div class="cart-preview" *ngIf="cartItems.length > 0">
-  
+
   <div class="cart-header" (click)="toggleCart()">
     <h3>
       🛒 Cart
@@ -43,8 +103,12 @@
 
   <div class="cart-items" *ngIf="isCartOpen">
     <div *ngFor="let item of cartItems" class="cart-item">
-      <span>{{ item.name }} x{{ item.qty }}</span>
-      <span>Rs. {{ item.price * item.qty }}</span>
+      <span>
+        {{ item.name }} ({{ item.quantity }}) x{{ item.qty }}
+      </span>
+      <span>
+        Rs. {{ item.price * item.qty }}
+      </span>
     </div>
   </div>
 

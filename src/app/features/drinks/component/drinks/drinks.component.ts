@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 import { ProductsService } from 'src/app/services/product.service';
 import jsPDF from 'jspdf';
@@ -8,74 +8,172 @@ import jsPDF from 'jspdf';
   templateUrl: './drinks.component.html',
   styleUrls: ['./drinks.component.css']
 })
-export class DrinksComponent implements OnInit, AfterViewInit {
+export class DrinksComponent implements OnInit {
 
-searchTerm: string = '';
-
+  searchTerm: string = '';
   drinksProducts: any[] = [];
 
   cartItems: any[] = [];
   totalPrice: number = 0;
   isCartOpen: boolean = false;
 
-  @ViewChild('cartScroll', { static: false }) cartScroll!: ElementRef;
+  currentPage: number = 1;
+  itemsPerPage: number = 20;
 
   constructor(
     private productService: ProductsService,
     private cartService: CartService
   ) {}
 
+  // ================= INIT =================
   ngOnInit(): void {
-   window.scrollTo({ top: 0, behavior: 'smooth' });
-   this.productService.getDrinksProducts()
-    .subscribe(products => {
-      this.drinksProducts = products;
-    });
-  }
+    this.setItemsPerPage();
 
-  ngAfterViewInit(): void {
+    this.productService.getDrinksProducts().subscribe((products: any[]) => {
+      this.drinksProducts = products.map(product => {
+
+        product.options = product.options || [];
+
+        // Sort sizes (ml/L support)
+        product.options.sort((a: any, b: any) => {
+          const getValue = (str: string) => {
+            const num = parseFloat(str);
+            if (str.includes('L')) return num * 1000;
+            return num;
+          };
+          return getValue(a.label) - getValue(b.label);
+        });
+
+        product.selectedOption = product.options[0];
+        return product;
+      });
+    });
+
     this.syncCart();
   }
 
-  // Search + Filter.
-  get filteredProducts() {
-    if (!this.searchTerm.trim()) {
-      return this.drinksProducts;
+  // ================= RESPONSIVE =================
+  @HostListener('window:resize')
+  onResize() {
+    const old = this.itemsPerPage;
+    this.setItemsPerPage();
+
+    if (old !== this.itemsPerPage) {
+      this.currentPage = 1;
     }
+  }
+
+  setItemsPerPage() {
+    const width = window.innerWidth;
+    this.itemsPerPage = width <= 768 ? 15 : 36;
+  }
+
+  // ================= SEARCH =================
+  onSearchChange() {
+    this.currentPage = 1;
+  }
+
+  get filteredProducts() {
+    if (!this.searchTerm.trim()) return this.drinksProducts;
 
     const term = this.searchTerm.toLowerCase();
-
     return this.drinksProducts.filter(p =>
       p.name.toLowerCase().includes(term)
     );
   }
 
-  // Cart.
+  // ================= PAGINATION =================
+  get pagedProducts() {
+    const start = (this.currentPage - 1) * this.itemsPerPage;
+    return this.filteredProducts.slice(start, start + this.itemsPerPage);
+  }
+
+  get totalPages(): number {
+    return Math.ceil(this.filteredProducts.length / this.itemsPerPage) || 1;
+  }
+
+  get paginationPages(): (number | string)[] {
+    const total = this.totalPages;
+    const current = this.currentPage;
+
+    const pages: (number | string)[] = [];
+
+    if (total <= 7) {
+      return Array.from({ length: total }, (_, i) => i + 1);
+    }
+
+    pages.push(1);
+
+    if (current > 4) pages.push('...');
+
+    const start = Math.max(2, current - 1);
+    const end = Math.min(total - 1, current + 1);
+
+    for (let i = start; i <= end; i++) {
+      pages.push(i);
+    }
+
+    if (current < total - 3) pages.push('...');
+
+    pages.push(total);
+
+    return pages;
+  }
+
+  goToPage(page: number | string) {
+    if (page === '...') return;
+
+    this.currentPage = Number(page);
+
+    const el = document.querySelector('.products');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  nextPage() {
+    if (this.currentPage < this.totalPages) {
+      this.goToPage(this.currentPage + 1);
+    }
+  }
+
+  prevPage() {
+    if (this.currentPage > 1) {
+      this.goToPage(this.currentPage - 1);
+    }
+  }
+
+  // ================= CART =================
   toggleCart() {
     this.isCartOpen = !this.isCartOpen;
   }
 
-  addToCart(product: any) {
-    this.cartService.addToCart(product);
-    this.syncCartAndScroll();
-  }
-
   increaseQty(product: any) {
-    this.cartService.addToCart(product);
-    this.syncCartAndScroll();
+    this.cartService.addToCart({
+      name: product.name,
+      price: product.selectedOption.price,
+      quantity: product.selectedOption.label
+    });
+
+    this.syncCart();
   }
 
   decreaseQty(product: any) {
-    this.cartService.decreaseQty(product);
+    this.cartService.decreaseQty({
+      name: product.name,
+      quantity: product.selectedOption.label
+    });
+
     this.syncCart();
   }
 
   getQty(product: any): number {
-    const item = this.cartService.getCart().find(p => p.name === product.name);
+    const item = this.cartItems.find(p =>
+      p.name === product.name &&
+      p.quantity === product.selectedOption.label
+    );
+
     return item ? item.qty : 0;
   }
 
-  // Cart Sync.
   private syncCart() {
     this.cartItems = this.cartService.getCart();
 
@@ -85,23 +183,11 @@ searchTerm: string = '';
     );
   }
 
-  private syncCartAndScroll() {
-    this.syncCart();
-
-    setTimeout(() => {
-      if (this.cartScroll) {
-        this.cartScroll.nativeElement.scrollTop =
-          this.cartScroll.nativeElement.scrollHeight;
-      }
-    }, 50);
-  }
-
-  // Send order to whatsapp.
+  // ================= WHATSAPP =================
   sendCartToWhatsApp() {
     const phoneNumber = "918284948635";
-    const cart = this.cartService.getCart();
 
-    if (cart.length === 0) {
+    if (this.cartItems.length === 0) {
       alert("Cart is empty!");
       return;
     }
@@ -109,10 +195,10 @@ searchTerm: string = '';
     let message = "🛒 *My Order List*:%0A%0A";
     let total = 0;
 
-    cart.forEach(item => {
+    this.cartItems.forEach(item => {
       const itemTotal = item.price * item.qty;
 
-      message += `• ${item.name}%0A`;
+      message += `• ${item.name} (${item.quantity})%0A`;
       message += `   Rs. ${item.price} x ${item.qty} = Rs. ${itemTotal}%0A%0A`;
 
       total += itemTotal;
@@ -124,9 +210,9 @@ searchTerm: string = '';
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
   }
 
-  // Download bill.
+  // ================= PDF =================
   downloadPDF() {
-    const doc = new (jsPDF as any)();
+    const doc = new jsPDF();
 
     doc.setFontSize(16);
     doc.text('My Order List', 10, 10);
@@ -135,17 +221,17 @@ searchTerm: string = '';
     let total = 0;
 
     this.cartItems.forEach(item => {
-      const line = `${item.name} x ${item.qty} = Rs. ${item.price * item.qty}`;
-      doc.setFontSize(12);
+      const line =
+        `${item.name} (${item.quantity}) x ${item.qty} = Rs. ${item.price * item.qty}`;
+
       doc.text(line, 10, y);
 
       y += 10;
       total += item.price * item.qty;
     });
 
-    doc.setFontSize(14);
     doc.text(`Total: Rs. ${total}`, 10, y + 10);
 
-    doc.save('Bill (RS SuperMart).pdf');
+    doc.save('Bill.pdf');
   }
 }

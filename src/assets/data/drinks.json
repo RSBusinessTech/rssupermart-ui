@@ -1,7 +1,61 @@
 [
-  { "name": "Cold Drink", "price": 3.00, "image": "assets/images/colddrink.png" },
-  { "name": "Mineral Water", "price": 1.50, "image": "assets/images/water.png" },
-  { "name": "Orange Juice", "price": 4.50, "image": "assets/images/orange-juice.png" },
-  { "name": "Energy Drink", "price": 5.20, "image": "assets/images/energy-drink.png" },
-  { "name": "Iced Tea", "price": 3.80, "image": "assets/images/iced-tea.png" }
+      {
+    "name": "Limca",
+    "image": "assets/images/limca.jpg",
+    "options": [
+      { "label": "250 ml", "price": 20 },
+      { "label": "1 L", "price": 70 }
+    ]
+  },
+    {
+    "name": "Coca Cola (Coke)",
+    "image": "assets/images/coke.jpg",
+    "options": [
+      { "label": "250 ml", "price": 20 },
+      { "label": "1 L", "price": 70 }
+    ]
+  },
+  {
+    "name": "Pepsi",
+    "image": "assets/images/pepsi.jpg",
+    "options": [
+      { "label": "Small", "price": 20 }
+    ]
+  },
+  {
+    "name": "Dew",
+    "image": "assets/images/dew.jpg",
+    "options": [
+      { "label": "Small", "price": 20 }
+    ]
+  },
+  {
+    "name": "Sting",
+    "image": "assets/images/sting.jpg",
+    "options": [
+      { "label": "Small", "price": 20 }
+    ]
+  },
+  {
+    "name": "Sprite",
+    "image": "assets/images/sprite.jpg",
+    "options": [
+      { "label": "Small", "price": 20 }
+    ]
+  },
+  {
+    "name": "Maaza",
+    "image": "assets/images/maaza.jpg",
+    "options": [
+      { "label": "250 ml", "price": 20 },
+      { "label": "1 L", "price": 70 }
+    ]
+  },
+  {
+    "name": "Mineral Water",
+    "image": "assets/images/bisleri.jpg",
+    "options": [
+      { "label": "Small Bottle", "price": 10 }
+    ]
+  }
 ]
