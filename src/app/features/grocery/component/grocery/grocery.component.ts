@@ -24,15 +24,16 @@ export class GroceryComponent implements OnInit {
     private cartService: CartService
   ) {}
 
+  // ================= INIT =================
   ngOnInit(): void {
     this.setItemsPerPage();
 
     this.productService.getGroceryProducts().subscribe((products: any[]) => {
-
       this.groceryProducts = products.map(product => {
 
         product.options = product.options || [];
 
+        // Sort options (kg/L handled)
         product.options.sort((a: any, b: any) => {
           const getValue = (str: string) => {
             const num = parseFloat(str);
@@ -45,16 +46,17 @@ export class GroceryComponent implements OnInit {
         product.selectedOption = product.options[0];
         return product;
       });
-
     });
 
     this.syncCart();
   }
 
+  // ================= RESPONSIVE =================
   @HostListener('window:resize')
   onResize() {
     const old = this.itemsPerPage;
     this.setItemsPerPage();
+
     if (old !== this.itemsPerPage) {
       this.currentPage = 1;
     }
@@ -63,16 +65,18 @@ export class GroceryComponent implements OnInit {
   setItemsPerPage() {
     const width = window.innerWidth;
 
-    if (width <= 768) this.itemsPerPage = 10;
-    else if (width <= 992) this.itemsPerPage = 16;
-    else this.itemsPerPage = 20;
+    if (width <= 768) {
+      this.itemsPerPage = 15;
+    } else {
+      this.itemsPerPage = 36;
+    }
   }
 
+  // ================= SEARCH =================
   onSearchChange() {
     this.currentPage = 1;
   }
 
-  // ================= FILTER =================
   get filteredProducts() {
     if (!this.searchTerm.trim()) return this.groceryProducts;
 
@@ -82,7 +86,7 @@ export class GroceryComponent implements OnInit {
     );
   }
 
-  // ================= PAGINATION PRODUCTS =================
+  // ================= PAGINATION =================
   get pagedProducts() {
     const start = (this.currentPage - 1) * this.itemsPerPage;
     return this.filteredProducts.slice(start, start + this.itemsPerPage);
@@ -92,15 +96,42 @@ export class GroceryComponent implements OnInit {
     return Math.ceil(this.filteredProducts.length / this.itemsPerPage) || 1;
   }
 
-  // ================= PAGINATION UI =================
   get paginationPages(): (number | string)[] {
     const total = this.totalPages;
+    const current = this.currentPage;
 
-    if (total <= 4) {
+    const pages: (number | string)[] = [];
+
+    // Small → show all
+    if (total <= 7) {
       return Array.from({ length: total }, (_, i) => i + 1);
     }
 
-    return [1, 2, 3, '...', total];
+    // Always first
+    pages.push(1);
+
+    // Left dots
+    if (current > 4) {
+      pages.push('...');
+    }
+
+    // Middle pages
+    const start = Math.max(2, current - 1);
+    const end = Math.min(total - 1, current + 1);
+
+    for (let i = start; i <= end; i++) {
+      pages.push(i);
+    }
+
+    // Right dots
+    if (current < total - 3) {
+      pages.push('...');
+    }
+
+    // Always last
+    pages.push(total);
+
+    return pages;
   }
 
   goToPage(page: number | string) {
@@ -109,7 +140,9 @@ export class GroceryComponent implements OnInit {
     this.currentPage = Number(page);
 
     const el = document.querySelector('.products');
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 
   nextPage() {
@@ -143,6 +176,7 @@ export class GroceryComponent implements OnInit {
       price: product.selectedOption.price,
       quantity: product.selectedOption.label
     });
+
     this.syncCart();
   }
 
@@ -151,6 +185,7 @@ export class GroceryComponent implements OnInit {
       name: product.name,
       quantity: product.selectedOption.label
     });
+
     this.syncCart();
   }
 
@@ -159,13 +194,16 @@ export class GroceryComponent implements OnInit {
       p.name === product.name &&
       p.quantity === product.selectedOption.label
     );
+
     return item ? item.qty : 0;
   }
 
   private syncCart() {
     this.cartItems = this.cartService.getCart();
+
     this.totalPrice = this.cartItems.reduce(
-      (sum, item) => sum + (item.price * item.qty), 0
+      (sum, item) => sum + (item.price * item.qty),
+      0
     );
   }
 
@@ -193,7 +231,10 @@ export class GroceryComponent implements OnInit {
     message += `💰 *Total: Rs. ${total}*%0A%0A`;
     message += "Please confirm my order. Thank you! 😊";
 
-    window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
+    window.open(
+      `https://wa.me/${phoneNumber}?text=${message}`,
+      "_blank"
+    );
   }
 
   // ================= PDF =================
@@ -207,7 +248,9 @@ export class GroceryComponent implements OnInit {
     let total = 0;
 
     this.cartItems.forEach(item => {
-      const line = `${item.name} (${item.quantity}) x ${item.qty} = Rs. ${item.price * item.qty}`;
+      const line =
+        `${item.name} (${item.quantity}) x ${item.qty} = Rs. ${item.price * item.qty}`;
+
       doc.text(line, 10, y);
 
       y += 10;

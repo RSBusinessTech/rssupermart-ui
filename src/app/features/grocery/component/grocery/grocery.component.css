@@ -76,8 +76,8 @@
 .products h2 {
   margin-bottom: 20px;
   color: rgb(194, 20, 20);
-  font-size: 52px;       /* bigger */
-  font-weight: 700;      /* bold */
+  font-size: 52px;
+  font-weight: 700;
   animation: slideInFadeRepeat 2s ease-in-out infinite alternate;
 }
 
@@ -97,7 +97,6 @@
   }
 }
 
-
 /* PRICE + QTY */
 .card-footer {
   display: flex;
@@ -106,13 +105,15 @@
   margin-top: 12px;
   gap: 10px;
 }
+
 /* 
 .price {
   color: #28a745;
   font-weight: bold;
   font-size: 16px;
   margin: 0;
-} */
+} 
+*/
 
 .price {
   color: #1a1a1a;
@@ -148,8 +149,6 @@
   background: #f3f4f6;
 }
 
-
-
 .qty-box button:last-child {
   background: #22c55e;
   color: white;
@@ -162,8 +161,6 @@
 .qty-box span {
   font-weight: 600;
 }
-
-
 
 /* ================= CART ================= */
 .cart-preview {
@@ -284,7 +281,6 @@
 }
 
 /* ================= DROPDOWN ================= */
-/* Wrapper for better control */
 .qty-dropdown {
   width: 100%;
   padding: 10px 12px;
@@ -298,43 +294,36 @@
   cursor: pointer;
   outline: none;
   transition: all 0.25s ease;
-  
-  /* remove default arrow */
+
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
 
-  /* custom arrow */
   background-image: url("data:image/svg+xml;utf8,<svg fill='%236b7280' height='20' viewBox='0 0 20 20' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M5.5 7.5l4.5 4.5 4.5-4.5'/></svg>");
   background-repeat: no-repeat;
   background-position: right 10px center;
   background-size: 16px;
 }
 
-/* Hover */
 .qty-dropdown:hover {
   border-color: #22c55e;
   background: #f0fdf4;
 }
 
-/* Focus */
 .qty-dropdown:focus {
   border-color: #22c55e;
   box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.15);
   background: #ffffff;
 }
 
-/* Active click feel */
 .qty-dropdown:active {
   transform: scale(0.98);
 }
 
-/* Product card hover effect */
 .product-card:hover .qty-dropdown {
   border-color: #22c55e;
 }
 
-/* Disabled (future-proof) */
 .qty-dropdown:disabled {
   background: #f3f4f6;
   cursor: not-allowed;
@@ -348,6 +337,7 @@
   flex-wrap: wrap;
   gap: 8px;
   margin: 30px 0;
+  align-items: flex-end;
 }
 
 .top-pagination {
@@ -381,4 +371,22 @@
   padding: 8px 10px;
   font-weight: bold;
   color: #6b7280;
+}
+
+@media (max-width: 768px) {
+  .pagination {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .pagination button {
+    padding: 4px 6px;
+    font-size: 11px;
+  }
+
+  .dots {
+    font-size: 12px;
+  }
 }
