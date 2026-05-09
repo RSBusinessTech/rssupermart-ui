@@ -66,5 +66,26 @@
     "options": [
       { "label": "1 L", "price": 20 }
     ]
+  },
+  {
+    "name": "Real Fruit Power Koolerz Mango Fruity",
+    "image": "assets/images/koolerzfruity.jpg",
+    "options": [
+      { "label": "125 ml", "price": 10 }
+    ]
+  },
+  {
+    "name": "Lahori Zeera [Apna Desi Thanda]",
+    "image": "assets/images/lahorizeera.jpg",
+    "options": [
+      { "label": "160 ml", "price": 10 }
+    ]
+  },
+   {
+    "name": "Curd [Dahi]",
+    "image": "assets/images/curd.jpg",
+    "options": [
+      { "label": "125 ml", "price": 10 }
+    ]
   }
 ]
