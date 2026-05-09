@@ -85,7 +85,10 @@
     "name": "Curd [Dahi]",
     "image": "assets/images/curd.jpg",
     "options": [
-      { "label": "125 ml", "price": 10 }
+      { "label": "125g", "price": 10 },
+      { "label": "250g", "price": 20 },
+      { "label": "500g", "price": 40 },
+      { "label": "1 kg", "price": 80 }
     ]
   }
 ]

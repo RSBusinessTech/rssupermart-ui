@@ -19,7 +19,7 @@
     <h2>Drinks</h2>
 
     <div class="product-grid">
-      <div class="product-card" *ngFor="let product of filteredProducts">
+      <div class="product-card" *ngFor="let product of pagedProducts">
 
         <!-- Image -->
         <img [src]="product.image" [alt]="product.name" />

@@ -34,17 +34,27 @@ export class DrinksComponent implements OnInit {
 
         product.options = product.options || [];
 
-        // Sort sizes (ml/L support)
+        // ✅ FIXED SORTING LOGIC (kg/g/ml/L)
         product.options.sort((a: any, b: any) => {
-          const getValue = (str: string) => {
-            const num = parseFloat(str);
-            if (str.includes('L')) return num * 1000;
-            return num;
+
+          const convertToBase = (label: string): number => {
+            const clean = label.toLowerCase().replace(/\s+/g, '');
+            const value = parseFloat(clean);
+
+            if (clean.includes('kg')) return value * 1000;
+            if (clean.includes('g')) return value;
+            if (clean.includes('l') && !clean.includes('ml')) return value * 1000;
+            if (clean.includes('ml')) return value;
+
+            return value || 0;
           };
-          return getValue(a.label) - getValue(b.label);
+
+          return convertToBase(a.label) - convertToBase(b.label);
         });
 
+        // default selected option = smallest size
         product.selectedOption = product.options[0];
+
         return product;
       });
     });
