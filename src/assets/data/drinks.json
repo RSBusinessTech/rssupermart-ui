@@ -60,6 +60,13 @@
       { "label": "1.2 L", "price": 100 }
     ]
   },
+    {
+    "name": "Fanta",
+    "image": "assets/images/fanta.jpeg",
+    "options": [
+      { "label": "2 L", "price": 85 }
+    ]
+  },
   {
     "name": "Mineral Water",
     "image": "assets/images/bisleri.jpg",
