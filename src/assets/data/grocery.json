@@ -532,8 +532,28 @@
      ]
   },
    {
-    "name": "Soyabean",
-    "image": "assets/images/soyabean.jpg",
+    "name": "Soyabean - Small",
+    "image": "assets/images/soyabeansmall.jpeg",
+    "options": [
+      { "label": "50 g", "price": 5.00 },
+      { "label": "100 g", "price": 10.00 },
+      { "label": "150 g", "price": 15.00 },
+      { "label": "200 g", "price": 20.00 },
+      { "label": "250 g", "price": 25.00 },
+      { "label": "500 g", "price": 50.00 },
+      { "label": "750 g", "price": 75.00 },
+      { "label": "1 kg", "price": 100.00 },
+      { "label": "2 kg", "price": 200.00 },
+      { "label": "5 kg", "price": 500.00 },
+      { "label": "10 kg", "price": 1000.00 },
+      { "label": "15 kg", "price": 1500.00 },
+      { "label": "20 kg", "price": 2000.00 },
+      { "label": "50 kg", "price": 5000.00 }
+    ]
+  },
+     {
+    "name": "Soyabean - Large",
+    "image": "assets/images/soyabeanlarge.jpg",
     "options": [
       { "label": "50 g", "price": 5.00 },
       { "label": "100 g", "price": 10.00 },
