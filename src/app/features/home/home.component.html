@@ -1,25 +1,39 @@
-<!-- HERO BANNER -->
+<!-- ================= HERO ================= -->
 <section class="hero-banner">
+
   <div class="hero-left">
+
     <h1>
       <span class="green-text">Super Price</span>,
       <span class="blue-text">Super Quality</span>
     </h1>
+
     <p>
-      Everything you need at Home – Grocery, Snacks, Drinks, Stationery,
+      Everything you need at Home – Grocery,
+      Snacks, Drinks, Stationery,
       Printing & Laminations etc.
     </p>
-    <br />
-    <a routerLink="/grocery" class="shop-btn">Start Shopping</a>
+
+    <a routerLink="/grocery" class="shop-btn">
+      Start Shopping
+    </a>
+
   </div>
 
   <div class="hero-right">
-    <img src="assets/images/grocery-banner.jpg" alt="banner" />
+
+    <img
+      src="assets/images/grocery-banner.jpg"
+      alt="banner"
+    />
+
   </div>
+
 </section>
 
-<!-- CATEGORY STRIP -->
+<!-- ================= CATEGORY STRIP ================= -->
 <section class="category-strip">
+
   <div class="category-item" routerLink="/grocery">
     <div class="icon">🛒</div>
     <p>Grocery</p>
@@ -44,76 +58,6 @@
     <div class="icon">🖨️</div>
     <p>Cafe Services</p>
   </div>
+
 </section>
 
-<!-- SEARCH BAR -->
-<section class="search-section">
-  <input
-    type="text"
-    [(ngModel)]="searchTerm"
-    placeholder="Search products..."
-    class="search-bar"
-  />
-</section>
-
-<!-- PRODUCT SECTIONS -->
-<section class="products-section">
-  <div *ngFor="let category of getFilteredCategories()" class="products">
-    <h2>{{ category.category }}</h2>
-    <div class="product-grid">
-      <div class="product-card" *ngFor="let product of category.products | slice:0:4">
-        <img [src]="product.image" [alt]="product.name" />
-        <h3>{{ product.name }}</h3>
-        <div class="card-footer">
-          <p class="price">Rs. {{ product.price }}</p>
-           <div class="qty-box">
-            <button (click)="decreaseQty(product)">−</button>
-            <span>{{ getQty(product) }}</span>
-            <button (click)="increaseQty(product)">+</button>
-           </div>        
-         </div>
-      </div>
-     </div>
-
-     <div class="see-more-wrapper">
-      <a [routerLink]="category.routerLink" class="see-more">
-        See more →
-      </a>
-     </div>
-     </div>
-
-    <div class="cart-preview" *ngIf="cartItems.length > 0">
-    <div class="cart-header" (click)="toggleCart()">
-     <h3>
-       🛒 Cart
-       <span class="toggle-icon">
-         {{ isCartOpen ? '▼' : '▲' }}
-       </span>
-     </h3>
-    </div>
-
-    <!-- ITEMS (COLLAPSIBLE) -->
-   <div class="cart-items" #cartScroll *ngIf="isCartOpen">
-    <div *ngFor="let item of cartItems" class="cart-item">
-      <span>{{ item.name }} x{{ item.qty }}</span>
-      <span>Rs. {{ item.price * item.qty }}</span>
-    </div>
-   </div>
-
-   <button (click)="downloadPDF()" class="pdf-btn">
-     Download Bill
-   </button>
-   
-   <!-- FIXED BOTTOM (ALWAYS VISIBLE) -->
-   <div class="cart-bottom">
-     <div class="cart-info">
-      🛒 {{ cartItems.length }} items | Rs. {{ totalPrice }}
-     </div>
-
-     <button (click)="sendCartToWhatsApp()" class="cart-btn">
-       Click to Buy
-       <img src="assets/icons/whatsapp.svg" alt="WhatsApp" />
-     </button>
-   </div>
-  </div>
-</section>
