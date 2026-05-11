@@ -1,0 +1,88 @@
+[
+  {
+    "category": "Grocery",
+    "routerLink": "/grocery",
+    "products": [
+      {
+        "name": "Sugar",
+        "image": "assets/images/sugar.png",
+        "options": [
+          { "label": "50 g", "price": 2.25 },
+          { "label": "100 g", "price": 4.5 },
+          { "label": "150 g", "price": 6.75 },
+          { "label": "200 g", "price": 9.0 },
+          { "label": "250 g", "price": 11.25 },
+          { "label": "500 g", "price": 22.5 },
+          { "label": "750 g", "price": 33.75 },
+          { "label": "1 kg", "price": 45.0 },
+          { "label": "2 kg", "price": 90.0 },
+          { "label": "5 kg", "price": 225.0 },
+          { "label": "10 kg", "price": 450.0 },
+          { "label": "15 kg", "price": 675.0 },
+          { "label": "20 kg", "price": 900.0 },
+          { "label": "50 kg", "price": 2250.0 }
+        ]
+      },
+      {
+        "name": "Tata Tea Agni",
+        "image": "assets/images/tataagnitea.webp",
+        "options": [
+          { "label": "1 packet", "price": 50 }
+        ]
+      },
+      {
+        "name": "Tata Tea Agni (Elaichi)",
+        "image": "assets/images/agniteagreen.jpg",
+        "options": [
+          { "label": "1 packet", "price": 80 }
+        ]
+      },
+      {
+        "name": "Nescafe Coffee",
+        "image": "assets/images/nescafecoffee.jpg",
+        "options": [
+          { "label": "1 packet", "price": 2 }
+        ]
+      }
+    ]
+  },
+
+  {
+    "category": "Drinks",
+    "routerLink": "/drinks",
+    "products": [
+      {
+        "name": "Limca",
+        "image": "assets/images/limca.jpg",
+        "options": [
+          { "label": "250 ml", "price": 20 },
+          { "label": "750 ml", "price": 35 },
+          { "label": "2 L", "price": 85 }
+        ]
+      },
+      {
+        "name": "Coca Cola (Coke)",
+        "image": "assets/images/coke.jpg",
+        "options": [
+          { "label": "250 ml", "price": 20 },
+          { "label": "750 ml", "price": 35 },
+          { "label": "2 L", "price": 85 }
+        ]
+      },
+      {
+        "name": "Pepsi",
+        "image": "assets/images/pepsi.jpg",
+        "options": [
+          { "label": "250 ml", "price": 20 }
+        ]
+      },
+      {
+        "name": "Mountain Dew",
+        "image": "assets/images/dew.jpg",
+        "options": [
+          { "label": "250 ml", "price": 20 }
+        ]
+      }
+    ]
+  }
+]

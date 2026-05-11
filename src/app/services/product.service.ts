@@ -61,6 +61,11 @@ export class ProductsService {
   );
  }
 
+  //Get home page products.
+  getHomePageProducts(): Observable<Product[]> {
+   return this.http.get<Product[]>('assets/data/home.json');
+  }
+
   //Get grocery products.
   getGroceryProducts(): Observable<Product[]> {
    return this.http.get<Product[]>('assets/data/grocery.json');

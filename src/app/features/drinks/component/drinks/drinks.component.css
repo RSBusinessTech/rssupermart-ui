@@ -66,6 +66,7 @@
   justify-content:center;
   margin:0px 0;
   padding:10px;
+  margin-top: 40px;
 }
 
 .search-bar{
@@ -211,8 +212,8 @@
 .qty-label{
   font-size:13px;
   font-weight:600;
-  color:#2563eb;
-  background:#e0edff;
+  background:#1e293b;
+  color:#38bdf8;
   margin:6px auto;
   padding:4px 10px;
   border-radius:6px;

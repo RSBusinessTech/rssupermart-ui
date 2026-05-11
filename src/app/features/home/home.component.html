@@ -1,47 +1,28 @@
-<!-- ================= HERO ================= -->
+<!-- HERO BANNER -->
 <section class="hero-banner">
-
   <div class="hero-left">
-
     <h1>
       <span class="green-text">Super Price</span>,
       <span class="blue-text">Super Quality</span>
     </h1>
-
     <p>
-      Everything you need at Home – Grocery,
-      Snacks, Drinks, Stationery,
+      Everything you need at Home – Grocery, Snacks & Drinks, Stationery,
       Printing & Laminations etc.
     </p>
-
-    <a routerLink="/grocery" class="shop-btn">
-      Start Shopping
-    </a>
-
+    <br />
+    <a routerLink="/grocery" class="shop-btn">Start Shopping</a>
   </div>
 
   <div class="hero-right">
-
-    <img
-      src="assets/images/grocery-banner.jpg"
-      alt="banner"
-    />
-
+    <img src="assets/images/grocery-banner.jpg" alt="banner" />
   </div>
-
 </section>
 
-<!-- ================= CATEGORY STRIP ================= -->
+<!-- CATEGORY STRIP -->
 <section class="category-strip">
-
   <div class="category-item" routerLink="/grocery">
     <div class="icon">🛒</div>
     <p>Grocery</p>
-  </div>
-
-  <div class="category-item" routerLink="/stationery">
-    <div class="icon">✏️</div>
-    <p>Stationery</p>
   </div>
 
   <div class="category-item" routerLink="/snacks">
@@ -54,10 +35,196 @@
     <p>Drinks</p>
   </div>
 
+  <div class="category-item" routerLink="/stationery">
+    <div class="icon">✏️</div>
+    <p>Stationery</p>
+  </div>
+
   <div class="category-item" routerLink="/cafe">
     <div class="icon">🖨️</div>
     <p>Cafe Services</p>
   </div>
+</section>
+
+<!-- SEARCH -->
+<section class="search-section">
+
+<input
+  type="text"
+  [(ngModel)]="searchTerm"
+  (input)="onSearchChange()"
+  placeholder="Search products..."
+  class="search-bar"
+/>
 
 </section>
 
+<!-- CATEGORY LOOP -->
+<!-- CATEGORY LOOP -->
+<section class="products-section">
+
+  <div
+    *ngFor="let category of filteredCategories"
+    class="products"
+    [ngClass]="{
+      'drinks-theme': category.category === 'Drinks'
+    }"
+  >
+
+    <!-- TITLE -->
+    <div class="section-header">
+      <h2>{{ category.category }}</h2>
+    </div>
+
+    <!-- PRODUCTS -->
+    <div class="product-grid">
+
+      <div
+        class="product-card"
+        *ngFor="let product of category.products"
+      >
+
+        <img
+          [src]="product.image"
+          [alt]="product.name"
+          loading="lazy"
+        />
+
+        <h3>{{ product.name }}</h3>
+
+        <!-- DROPDOWN -->
+        <div *ngIf="product.options.length > 1">
+
+          <select
+            [(ngModel)]="product.selectedOption"
+            class="qty-dropdown"
+          >
+
+            <option
+              *ngFor="let opt of product.options"
+              [ngValue]="opt"
+            >
+              {{ opt.label }} - Rs. {{ opt.price }}
+            </option>
+
+          </select>
+
+        </div>
+
+        <!-- SINGLE OPTION -->
+        <div
+          *ngIf="product.options.length === 1"
+          class="qty-label"
+        >
+          {{ product.options[0].label }}
+        </div>
+
+        <!-- FOOTER -->
+        <div class="card-footer">
+
+          <p class="price">
+            Rs. {{ product.selectedOption?.price }}
+          </p>
+
+          <div class="qty-box">
+
+            <button (click)="decreaseQty(product)">
+              −
+            </button>
+
+            <span>
+              {{ getQty(product) }}
+            </span>
+
+            <button (click)="increaseQty(product)">
+              +
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <a
+      [routerLink]="category.routerLink"
+      class="see-more"
+    >
+      See More →
+    </a>
+
+  </div>
+
+</section>
+
+<!-- CART -->
+<div
+  class="cart-preview"
+  *ngIf="cartItems.length > 0"
+>
+
+  <div
+    class="cart-header"
+    (click)="toggleCart()"
+  >
+
+    <h3>
+      🛒 Cart
+      <span>
+        {{ isCartOpen ? '▼' : '▲' }}
+      </span>
+    </h3>
+
+  </div>
+
+  <div
+    class="cart-items"
+    *ngIf="isCartOpen"
+  >
+
+    <div
+      *ngFor="let item of cartItems"
+      class="cart-item"
+    >
+
+      <span>
+        {{ item.name }}
+        ({{ item.quantity }})
+        x{{ item.qty }}
+      </span>
+
+      <span>
+        Rs. {{ item.price * item.qty }}
+      </span>
+
+    </div>
+
+  </div>
+
+  <button
+    (click)="downloadPDF()"
+    class="pdf-btn"
+  >
+    Download Bill
+  </button>
+
+  <div class="cart-bottom">
+
+    <div class="cart-info">
+      🛒 {{ cartItems.length }}
+      items |
+      Rs. {{ totalPrice }}
+    </div>
+
+    <button
+      (click)="sendCartToWhatsApp()"
+      class="cart-btn"
+    >
+      Click to Buy
+    </button>
+
+  </div>
+
+</div>
