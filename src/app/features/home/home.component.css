@@ -103,16 +103,6 @@
   color: white;
   transform: translateY(-2px);
 }
-/* MOBILE FIX */
-@media (max-width: 768px) {
-  .section-header h2 {
-    font-size: 23px;
-  }
-
-  .section-header {
-    align-items: center;
-  }
-}
 
 /* PRODUCTS */
 .products {
@@ -127,6 +117,19 @@
   animation: slideInFadeRepeat 2s ease-in-out infinite alternate;
 }
 
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .section-header h2 {
+    font-size: 23px;
+  }
+
+  .section-header {
+    align-items: center;
+  }
+ .products h2 {
+  font-size: 42px;       /* bigger */
+}
+}
 /* Keyframes for repeating slide + fade */
 @keyframes slideInFadeRepeat {
   0% {
