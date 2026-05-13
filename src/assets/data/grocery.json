@@ -484,13 +484,6 @@
       { "label": "1 packet", "price": 20 }
     ]
   },
-  {
-    "name": "Kesari Nirol Soap (Desi Sabun)",
-    "image": "assets/images/kesarinirol.jpg",
-    "options": [
-      { "label": "1 packet - 3 pcs", "price": 30 }
-    ]
-  },
       {
     "name": "Phoolwadi",
     "image": "assets/images/phoolwadi.jpg",
@@ -532,7 +525,7 @@
      ]
   },
    {
-    "name": "Soyabean - Small",
+    "name": "Soyabean (Nutri) - Small",
     "image": "assets/images/soyabeansmall.jpeg",
     "options": [
       { "label": "50 g", "price": 5.00 },
@@ -552,7 +545,7 @@
     ]
   },
      {
-    "name": "Soyabean - Large",
+    "name": "Soyabean (Nutri) - Large",
     "image": "assets/images/soyabeanlarge.jpg",
     "options": [
       { "label": "50 g", "price": 5.00 },
@@ -569,6 +562,20 @@
       { "label": "15 kg", "price": 1500.00 },
       { "label": "20 kg", "price": 2000.00 },
       { "label": "50 kg", "price": 5000.00 }
+    ]
+  },
+  {
+    "name": "Soyabean (Nutri) - Small",
+    "image": "assets/images/soyabeanpacketsmall.jpg",
+    "options": [
+      { "label": "1 packet", "price": 10 }
+    ]
+  },
+  {
+    "name": "Soyabean (Nutri) - Large",
+    "image": "assets/images/soyabeanpacketlarge.jpg",
+    "options": [
+      { "label": "500g packet", "price": 10 }
     ]
   },
   {
@@ -651,6 +658,13 @@
     "image": "assets/images/dettolhandwash.jpg",
     "options": [
       { "label": "1 unit", "price": 10 }
+    ]
+  },
+    {
+    "name": "Kesari Nirol Soap (Desi Sabun)",
+    "image": "assets/images/kesarinirol.jpg",
+    "options": [
+      { "label": "1 packet - 3 pcs", "price": 30 }
     ]
   },
   {
