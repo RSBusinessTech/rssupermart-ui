@@ -1,8 +1,44 @@
 [
-  { "name": "Printing (B/W - 1 side)", "price": 1.0, "image": "assets/images/printbw1side.jpg" },
-  { "name": "Printing (B/W - 2 sides)", "price": 2.0, "image": "assets/images/printbw2side.jpg" },
-  { "name": "Printing (Color - 1 side)", "price": 5.0, "image": "assets/images/printcolor1side.jpg" },
-  { "name": "Printing (Color - 2 sides)", "price": 10.0, "image": "assets/images/printcolor2side.jpg" },
-  { "name": "Lamination (Small)", "price": 10.0, "image": "assets/images/laminationsmall.jpg" },
-  { "name": "Lamination (Large)", "price": 20.0, "image": "assets/images/laminationlarge.jpg" }
+  {
+    "name": "Printing (B/W - 1 side)",
+    "image": "assets/images/printbw1side.jpg",
+    "options": [
+      { "label": "1 page", "price": 1.0 }
+    ]
+  },
+  {
+    "name": "Printing (B/W - 2 sides)",
+    "image": "assets/images/printbw2side.jpg",
+    "options": [
+      { "label": "1 page", "price": 2.0 }
+    ]
+  },
+  {
+    "name": "Printing (Color - 1 side)",
+    "image": "assets/images/printcolor1side.jpg",
+    "options": [
+      { "label": "1 page", "price": 5.0 }
+    ]
+  },
+  {
+    "name": "Printing (Color - 2 sides)",
+    "image": "assets/images/printcolor2side.jpg",
+    "options": [
+      { "label": "1 page", "price": 10.0 }
+    ]
+  },
+  {
+    "name": "Lamination (Small)",
+    "image": "assets/images/laminationsmall.jpg",
+    "options": [
+      { "label": "1 unit", "price": 10.0 }
+    ]
+  },
+  {
+    "name": "Lamination (Large)",
+    "image": "assets/images/laminationlarge.jpg",
+    "options": [
+      { "label": "1 unit", "price": 20.0 }
+    ]
+  }
 ]

@@ -13,24 +13,35 @@
   <h2>Cafe Services</h2>
 
   <div class="product-grid">
-    <div class="product-card" *ngFor="let product of filteredProducts">
+   <div class="product-card" *ngFor="let product of filteredProducts">
 
   <div class="coming-soon">Coming Soon</div>
 
+  <img [src]="product.image" [alt]="product.name" />
 
-      <img [src]="product.image" [alt]="product.name" />
-      <h3>{{ product.name }}</h3>
+  <h3>{{ product.name }}</h3>
 
-      <div class="card-footer">
-        <p class="price">Rs. {{ product.price }}</p>
+  <!-- LABEL -->
+  <div class="qty-label">
+    {{ getSelectedOption(product).label }}
+  </div>
 
-        <div class="qty-box">
-          <button (click)="decreaseQty(product)">−</button>
-          <span>{{ getQty(product) }}</span>
-          <button (click)="increaseQty(product)">+</button>
-        </div>
-      </div>
+  <div class="card-footer">
+
+    <!-- PRICE -->
+    <p class="price">
+      Rs. {{ getSelectedOption(product).price }}
+    </p>
+
+    <div class="qty-box">
+      <button (click)="decreaseQty(product)">−</button>
+      <span>{{ getQty(product) }}</span>
+      <button (click)="increaseQty(product)">+</button>
     </div>
+
+  </div>
+
+</div>
   </div>
 
 </section>

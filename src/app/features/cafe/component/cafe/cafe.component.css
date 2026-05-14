@@ -133,7 +133,8 @@
 }
 
 .qty-box button:first-child {
-  background: #f3f4f6;
+   background: rgb(230, 21, 21);
+   color:white;
 }
 
 .qty-box button:last-child {
@@ -295,11 +296,10 @@
 .product-card:hover {
   transform: translateY(-10px) scale(1.02);
   color:white;
-  background-color: rgb(37, 32, 32);
 
-  box-shadow:
+  /* box-shadow:
     0 20px 40px rgba(0,0,0,0.28),
-    0 0 25px rgba(34,197,94,0.22);
+    0 0 25px rgba(34,197,94,0.22); */
 }
 
 .product-card:hover::before {
@@ -402,10 +402,10 @@
 }
 
 /* MINUS */
-.qty-box button:first-child {
+/* .qty-box button:first-child {
   background: rgba(255,255,255,0.12);
   color: white;
-}
+} */
 
 /* PLUS */
 .qty-box button:last-child {
@@ -436,6 +436,19 @@
   font-weight: 700;
   min-width: 20px;
   text-align: center;
+}
+.qty-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #111827;
+  background: #e5e7eb;
+  padding: 4px 10px;
+  border-radius: 6px;
+  display: inline-block;
+  min-width: 60px;
+  text-align: center;
+
+  transform: translateY(-10px);
 }
 
 /* ================= CARD ENTRY ANIMATION ================= */
@@ -526,7 +539,6 @@
 }
 
 /* ================= COMING SOON CENTER ================= */
-
 .coming-soon {
   position: absolute;
   top: 50%;

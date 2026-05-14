@@ -191,4 +191,5 @@ export class HomeComponent implements OnInit {
 
     doc.save('Bill.pdf');
   }
+  
 }
