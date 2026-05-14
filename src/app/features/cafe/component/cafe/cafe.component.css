@@ -354,15 +354,11 @@
 /* ================= PRICE ================= */
 
 .price {
-  background: linear-gradient(
-    135deg,
-    #22c55e,
-    #16a34a
-  );
+  background: linear-gradient(135deg, #ff9800, #ff5722);
 
   color: white;
 
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
 
   padding: 10px 16px;
@@ -526,5 +522,62 @@
 
   .price {
     font-size: 20px;
+  }
+}
+
+/* ================= COMING SOON CENTER ================= */
+
+.coming-soon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  background: linear-gradient(
+    135deg,
+    #ff0000,
+    #ff3b3b
+  );
+
+  color: white;
+
+  padding: 12px 26px;
+
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 2px;
+
+  border-radius: 14px;
+
+  z-index: 20;
+
+  text-transform: uppercase;
+
+  border: 3px solid white;
+
+  white-space: nowrap;
+
+  box-shadow:
+    0 8px 25px rgba(255,0,0,0.45),
+    0 0 15px rgba(255,255,255,0.25);
+
+  animation: pulseComingSoon 1.5s infinite;
+}
+
+/* ANIMATION */
+
+@keyframes pulseComingSoon {
+
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
   }
 }

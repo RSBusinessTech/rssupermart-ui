@@ -46,7 +46,6 @@
       }
     ]
   },
-
   {
     "category": "Drinks",
     "routerLink": "/drinks",
@@ -84,5 +83,39 @@
         ]
       }
     ]
-  }
+  },
+   {
+  "category": "Cafe Services",
+  "routerLink": "/cafe",
+  "products": [
+    {
+      "name": "Printing (B/W - 1 side)",
+      "image": "assets/images/printbw1side.jpg",
+      "options": [
+        { "label": "1 page", "price": 1.0 }
+      ]
+    },
+    {
+      "name": "Printing (B/W - 2 sides)",
+      "image": "assets/images/printbw2side.jpg",
+      "options": [
+        { "label": "1 page", "price": 2.0 }
+      ]
+    },
+    {
+      "name": "Printing (Color - 1 side)",
+      "image": "assets/images/printcolor1side.jpg",
+      "options": [
+        { "label": "1 page", "price": 5.0 }
+      ]
+    },
+    {
+      "name": "Printing (Color - 2 sides)",
+      "image": "assets/images/printcolor2side.jpg",
+      "options": [
+        { "label": "1 page", "price": 10.0 }
+      ]
+    }
+  ]
+ }
 ]

@@ -21,7 +21,7 @@
     "name": "Pepsi",
     "image": "assets/images/pepsi.jpg",
     "options": [
-      { "label": "250 ml", "price": 20 }
+      { "label": "400 ml", "price": 20 }
     ]
   },
   {
@@ -57,7 +57,7 @@
     "image": "assets/images/maaza.jpg",
     "options": [
       { "label": "600 ml", "price": 50 },
-      { "label": "1.2 L", "price": 100 }
+      { "label": "2 L", "price": 100 }
     ]
   },
     {

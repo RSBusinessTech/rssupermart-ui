@@ -67,7 +67,8 @@
     *ngFor="let category of filteredCategories"
     class="products"
     [ngClass]="{
-      'drinks-theme': category.category === 'Drinks'
+     'drinks-theme': category.category === 'Drinks',
+     'cafe-theme': category.category === 'Cafe Services'
     }"
   >
 
@@ -89,6 +90,14 @@
           [alt]="product.name"
           loading="lazy"
         />
+
+          <!-- ONLY FOR CAFE SERVICES -->
+      <div
+        class="coming-soon"
+        *ngIf="category.category === 'Cafe Services'"
+      >
+       Coming Soon
+      </div>
 
         <h3>{{ product.name }}</h3>
 

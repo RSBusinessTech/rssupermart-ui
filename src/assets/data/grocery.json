@@ -144,6 +144,48 @@
     ]
   },
   {
+    "name": "Kissan Tomato Sauce",
+    "image": "assets/images/tomatosauce.jpg",
+    "options": [
+      { "label": "1 packet", "price": 50 }
+    ]
+  },
+    {
+    "name": "Rafan Vegetable Sauce",
+    "image": "assets/images/rafanvegetablesauce.jpg",
+    "options": [
+      { "label": "1 packet", "price": 35 }
+    ]
+  },
+    {
+    "name": "Rafan Green Chilli Sauce",
+    "image": "assets/images/refangreenchillisauce.jpg",
+    "options": [
+      { "label": "1 packet", "price": 35 }
+    ]
+  },
+      {
+    "name": "Yippee Noodles",
+    "image": "assets/images/yippeenoodles.jpg",
+    "options": [
+      { "label": "1 packet", "price": 10 }
+    ]
+  },
+    {
+    "name": "Maggi",
+    "image": "assets/images/maggi.jpg",
+    "options": [
+      { "label": "1 packet", "price": 10 }
+    ]
+  },
+   {
+    "name": "Rafan Dalia",
+    "image": "assets/images/dalia.jpg",
+    "options": [
+      { "label": "1 packet", "price": 10 }
+    ]
+  },
+  {
     "name": "1121 Basmati Rice",
     "image": "assets/images/1121basmatirice.jpg",
     "options": [
@@ -632,6 +674,13 @@
       { "label": "1 unit", "price": 30 }
     ]
   },
+    {
+    "name": "Rexona Soap",
+    "image": "assets/images/rexonasoap.jpg",
+    "options": [
+      { "label": "1 unit", "price": 40 }
+    ]
+  },
   {
     "name": "No.1 Soap",
     "image": "assets/images/no1soap.jpg",
@@ -699,7 +748,13 @@
     "name": "Nihar Shanti Amla Hair Oil",
     "image": "assets/images/niharshantiamlahairoil.jpg",
     "options": [
-      { "label": "1 bottle", "price": 10 },
+      { "label": "1 bottle", "price": 10 }
+    ]
+  },
+    {
+    "name": "Dabur Amla Hair Oil",
+    "image": "assets/images/daburamlahairoil.jpg",
+    "options": [
       { "label": "1 bottle", "price": 20 }
     ]
   },
@@ -760,6 +815,7 @@
     "name": "Pepsodent Toothpaste",
     "image": "assets/images/pepsodent.jpg",
     "options": [
+      { "label": "Small (S)", "price": 10 },
       { "label": "Medium (M)", "price": 20 },
       { "label": "Large (L)", "price": 65 }
     ]

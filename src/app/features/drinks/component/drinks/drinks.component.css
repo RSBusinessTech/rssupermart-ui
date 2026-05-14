@@ -4,7 +4,7 @@
   min-height: 100vh;
   background: #f6f7fb;
   overflow: hidden;
-  font-family: system-ui, -apple-system, sans-serif;
+  /* font-family: system-ui, -apple-system, sans-serif; */
 }
 
 /* Keep content above background */
@@ -232,7 +232,7 @@
 .price{
   font-weight:700;
   font-size:17px;
-  background:#22c55e;
+  background:linear-gradient(135deg, #ff9800, #ff5722);
   padding:5px 12px;
   border-radius:8px;
   box-shadow:0 2px 6px rgba(0,0,0,.1);
