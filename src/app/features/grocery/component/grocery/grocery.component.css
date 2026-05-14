@@ -145,7 +145,8 @@
 }
 
 .qty-box button:first-child {
-  background: #f3f4f6;
+   background: rgb(230, 21, 21);
+   color:white;
 }
 
 .qty-box button:last-child {

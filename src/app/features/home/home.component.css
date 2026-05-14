@@ -436,8 +436,8 @@ transition:0.3s;
 
 /* MINUS BUTTON */
 .qty-box button:first-child {
-  background: #f3f4f6;
-  color: #111827;
+   background: rgb(230, 21, 21);
+   color:white;
 }
 
 /* PLUS BUTTON */
@@ -869,10 +869,10 @@ transition:0.3s;
   box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
-.qty-box button:first-child {
+/* .qty-box button:first-child {
   background: #f3f4f6;
   color: #111827;
-}
+} */
 
 .qty-box button:last-child {
   background: #22c55e;
@@ -892,7 +892,7 @@ transition:0.3s;
   text-align: center;
   font-size: 15px;
   font-weight: 600;
-  color: #111827;
+  color: black;
 }
 
 /* Pagination */
@@ -1060,6 +1060,13 @@ transition:0.3s;
   color:white;
 }
 
+.drinks-theme .qty-box span {
+  min-width: 22px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+}
 .drinks-theme .product-card img{
   width:100%;
   height:320px;
@@ -1205,6 +1212,15 @@ transition:0.3s;
   transition: 0.35s ease;
 }
 
+.cafe-theme .qty-box span {
+  min-width: 22px;
+  text-align: center;
+
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+}
+
 /* Hover effect */
 .cafe-theme .product-card:hover {
   transform: translateY(-10px) scale(1.02);
@@ -1259,6 +1275,8 @@ transition:0.3s;
   /* background: linear-gradient(135deg, #ff9800, #ff5722); */
   color: white;
 }
+
+
 
 /* Coming Soon Overlay */
 .cafe-theme .coming-soon {
