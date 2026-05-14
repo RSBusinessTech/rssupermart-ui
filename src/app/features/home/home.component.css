@@ -170,14 +170,10 @@
 }
 
 .product-card:hover {
- background: green; /* <-- change to red on hover */
+  background: rgb(202, 199, 195);
+  transform: translateY(-5px);
   transform: translateY(-5px);
   box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-}
-/* OPTIONAL: make text readable on red */
-.product-card:hover h3,
-.product-card:hover .price {
-  color: white;
 }
 
 /* Badge */
@@ -773,8 +769,8 @@ transition:0.3s;
 .qty-label {
   font-size: 13px;
   font-weight: 600;
-  color: #2563eb;
-  background: #e0edff;
+  color: #111827;
+  background: #e5e7eb;
   padding: 4px 10px;
   border-radius: 6px;
   display: inline-block;

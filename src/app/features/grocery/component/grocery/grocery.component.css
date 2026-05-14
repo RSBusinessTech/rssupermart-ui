@@ -64,14 +64,14 @@
 }
 
 .product-card:hover {
-  background: green;
+  background: rgb(202, 199, 195);
   transform: translateY(-5px);
 }
 
-.product-card:hover h3,
+/* .product-card:hover h3,
 .product-card:hover .price {
   color: white;
-}
+} */
 
 .products h2 {
   margin-bottom: 20px;
@@ -116,13 +116,12 @@
 */
 
 .price {
-  color: #1a1a1a;
   font-weight: 700;
   font-size: 18px;
   margin: 0;
   padding: 4px 10px;
-  background: linear-gradient(90deg, #ffe082, #ffca28);
-  border-radius: 6px;
+  background: linear-gradient(135deg, #ff9800, #ff5722);
+  color: white;  border-radius: 6px;
   display: inline-block;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
@@ -264,8 +263,8 @@
 .qty-label {
   font-size: 13px;
   font-weight: 600;
-  color: #2563eb;
-  background: #e0edff;
+  color: #111827;
+  background: #e5e7eb;
   padding: 4px 10px;
   border-radius: 6px;
   display: inline-block;
