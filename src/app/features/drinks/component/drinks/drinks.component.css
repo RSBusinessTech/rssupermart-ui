@@ -212,8 +212,8 @@
 .qty-label{
   font-size:13px;
   font-weight:600;
-  background:#1e293b;
-  color:#38bdf8;
+  color: #111827;
+  background: #e5e7eb;
   margin:6px auto;
   padding:4px 10px;
   border-radius:6px;
@@ -256,9 +256,8 @@
   transition:.25s;
 }
 
-.qty-box button:first-child {
-   background: rgb(230, 21, 21);
-   color:white;
+.qty-box button:first-child{
+  background:#f3f4f6;
 }
 
 .qty-box button:last-child{
