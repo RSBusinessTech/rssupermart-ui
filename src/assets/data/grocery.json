@@ -23,7 +23,7 @@
     "name": "Tata Tea Agni",
     "image": "assets/images/tataagnitea.webp",
     "options": [
-      { "label": "1 packet", "price": 50 }
+      { "label": "1 packet", "price": 60 }
     ]
   },
   {
@@ -45,7 +45,8 @@
     "image": "assets/images/vishnumustardoil.jpeg",
     "options": [
       { "label": "1/2 L", "price": 80 },
-      { "label": "1 L", "price": 160 }
+      { "label": "1 L", "price": 160 },
+      { "label": "5 L", "price": 800 }
     ]
   },
   {
